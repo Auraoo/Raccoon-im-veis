@@ -1,6 +1,6 @@
 
 .dark-header {
-    background-color: #fff; /* Cor de fundo escura */
+    background-color: #0A0908; /* Cor de fundo escura */
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
 }
 
 .dark-header .navbar-nav .nav-link {
-    color:  black !important; /* Cor do texto branco */
+    color:  white !important; /* Cor do texto branco */
     
 }
 
