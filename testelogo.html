@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste logo</title>
+</head>
+<style>
+    #logoguaxinim {
+        width: 50px;
+    }
+</style>
+
+<body>
+    <div id="logoteste">
+        <img src="/assets/guaxinim2.png" id="logoguaxinim" alt="Minha Imagem">
+    </div>
+</body>
+
+<script>
+var logo = document.getElementById("logoguaxinim");
+var imagemPadrao = "/assets/guaxinim2.png";
+var imagemHover = "/assets/guaxinim1.png";
+
+// Adiciona os ouvintes de eventos para hover
+logo.addEventListener("mouseover", function() {
+    this.src = imagemHover;
+});
+
+// Adiciona os ouvintes de eventos para quando o mouse é tirado de cima
+logo.addEventListener("mouseout", function() {
+    this.src = imagemPadrao;
+});
+</script>
+</html>
