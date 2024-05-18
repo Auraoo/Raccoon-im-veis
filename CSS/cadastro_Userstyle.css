@@ -1,0 +1,40 @@
+.navbar-brand img {
+    max-height: 40px;
+  }
+  .navbar-toggler {
+    border: none;
+  }
+  .navbar-toggler-icon {
+    color: #000; /* Cor preta */
+  }
+  .navbar-nav .nav-link {
+    color: #333;
+  }
+  .sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #f8f9fa;
+    transition: all 0.3s;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+  .sidebar ul.navbar-nav {
+    flex-direction: column;
+  }
+  .sidebar .navbar-brand {
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .sidebar .nav-item {
+    padding: 8px 15px;
+  }
+  .shadow-box {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adicione a sombra aqui */
+    padding: 20px; /* Adicione o preenchimento desejado */
+    border-radius: 10px; /* Adicione o raio da borda desejado */
+    
+  }

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra de Navegação</title>
+  <link rel="stylesheet" href="../CSS/cadastro_Userstyle.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- CSS personalizado -->
+</head>
+<body>
+    
+  <!-- Formulário de cadastro -->
+  
+
+      <div class="container mt-4">
+      <div id="logoteste" class="align-content-center" style="display: flex;" >
+        <img src="../assets/guaxinim2.png" id="logoguaxinim" width="50px" alt="Minha Imagem">
+        <img src="../assets/logoverbal.png " id="" class="mr-3" width="150px" alt="Minha Imagem">       
+        </div>
+        <hr>
+        <!-- Abas para alternar entre Pessoa Física e Pessoa Jurídica -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pessoaFisica-tab" data-toggle="tab" href="#pessoaFisica" role="tab" aria-controls="pessoaFisica" aria-selected="true" data-tipo="1">Pessoa Física</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pessoaJuridica-tab" data-toggle="tab" href="#pessoaJuridica" role="tab" aria-controls="pessoaJuridica" aria-selected="false" data-tipo="2">Pessoa Jurídica</a>
+          </li>
+        </ul>
+<div class="tab-content" id="myTabContent">
+                <!-- Formulário de Pessoa Física -->
+  <div class="tab-pane fade show active" id="pessoaFisica" role="tabpanel" aria-labelledby="pessoaFisica-tab">
+      <div class="shadow-box">
+            <h4>Dados Pessoais</h4>
+
+            <form id="pessoa_fisica" action="../operacoes_CRUD/adicionar.php" method="post">
+                <div class="form-group">
+                  <label for="nomeCompletoPF">Nome Completo:</label>
+                  <input type="text" class="form-control" name="nome" id="nomeCompletoPF">
+                </div>
+                
+                <div class="form-group">
+                  <label for="dataNascimentoPF">Data de Nascimento:</label>
+                  <input type="date" class="form-control" name="datanascimentoPF" id="dataNascimentoPF">
+                </div>
+
+                <div class="form-group">
+                  <label for="cpfPF">CPF:</label>
+                  <input type="text" class="form-control" name="cpfPF" id="cpfPF">
+                </div>
+
+                <div class="form-group">
+                  <label for="telefoneCelularPF">Telefone Celular:</label>
+                  <input type="tel" class="form-control" name="telefone" id="telefoneCelularPF">
+                </div>
+
+                <div class="form-group">
+                  <label for="emailPF">E-mail:</label>
+                  <input type="email" class="form-control"  id="emailPF">
+                </div>
+                
+                <div class="form-group">
+                  <label for="confirmarEmailPF">Digite Novamente:</label>
+                  <input type="email" class="form-control" name="email" id="confirmarEmailPF">
+                </div>
+
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="desejoReceberEmailsPF">
+                  <label class="form-check-label" for="desejoReceberEmailsPF">Desejo receber e-mails promocionais</label>
+                </div>
+
+                <div class="form-group">
+                  <label for="senhaPF">Senha:</label>
+                  <input type="password" class="form-control" id="senhaPF">
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmarSenhaPF">Digite Novamente:</label>
+                  <input type="password" class="form-control" name="senha" id="confirmarSenhaPF">
+                </div>
+                
+                <small>Ao continuar, concorda com nossa política de privacidade.</small><br>
+                <input type="hidden" name="tipoUsuario" id="tipoUsuario" value="1">
+                <input type="submit" class="btn btn-primary mt-3" value="Cadastrar">
+          </form>
+      </div>
+      <small>Já possui cadastro? Facça seu login</small><br>
+      <button type="button" class="btn btn-primary" onclick="window.location.href='login.html'">
+        Login
+    </button>
+  </div>
+
+            <!-- Formulário de Pessoa Jurídica -->
+  <div class="tab-pane fade" id="pessoaJuridica" role="tabpanel" aria-labelledby="pessoaJuridica-tab">
+            <div class="shadow-box">
+        <h4>Dados da Empresa</h4>
+        <form id="pessoa_juridica" action="../operacoes/adicionar.php" method="post">
+          <div class="form-group">
+            <label for="razaoSocial">Razão Social:</label>
+            <input type="text" class="form-control" name="nome" id="razaoSocial">
+          </div>
+          <div class="form-group">
+            <label for="inscricaoEstadual">Inscrição Estadual:</label>
+            <input type="text" class="form-control" name="inscricaoestadual" id="inscricaoEstadual">
+          </div>
+          <div class="form-group">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" class="form-control" name="cnpj" id="cnpj">
+          </div>
+          <div class="form-group">
+            <label for="dataNascimentoPJ">Data de Nascimento:</label>
+            <input type="date" class="form-control" name="datanascimentoPJ" id="dataNascimentoPJ">
+          </div>
+          <div class="form-group">
+            <label for="cpfPJ">(Opcional) CPF:</label>
+            <input type="text" class="form-control" name="cpfPJ" id="cpfPJ">
+          </div>
+          <div class="form-group">
+            <label for="telefoneFixo">Telefone Fixo ou Comercial:</label>
+            <input type="tel" class="form-control" name="telefone" id="telefoneFixo">
+          </div>
+          <div class="form-group">
+            <label for="telefoneCelularPJ">Telefone Celular:</label>
+            <input type="tel" class="form-control" name="telefone_celularPJ" id="telefoneCelularPJ">
+          </div>
+          <div class="form-group">
+            <label for="emailPJ">E-mail:</label>
+            <input type="email" class="form-control" id="emailPJ">
+          </div>
+          <div class="form-group">
+            <label for="confirmarEmailPJ">Digite Novamente:</label>
+            <input type="email" class="form-control" name="email" id="confirmarEmailPJ">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="desejoReceberEmailsPJ">
+            <label class="form-check-label" for="desejoReceberEmailsPJ">Desejo receber e-mails promocionais</label>
+          </div>
+          <div class="form-group">
+            <label for="senhaPJ">Senha:</label>
+            <input type="password" class="form-control" id="senhaPJ">
+          </div>
+          <div class="form-group">
+            <label for="confirmarSenhaPJ">Digite Novamente:</label>
+            <input type="password" class="form-control" name="senha" id="confirmarSenhaPJ">
+          </div>
+          <small>Ao continuar, concorda com nossa política de privacidade.</small><br>
+          <input type="hidden" name="tipoUsuario" id="tipoUsuario" value="2">
+          <input type="submit" class="btn btn-primary mt-3" value="cadastrar">
+
+        </form>
+        
+      </div>
+      <div class="display-flex" >
+        <small>Já possui cadastro? Facça seu login</small><br>
+      <button type="button" class="btn btn-primary" onclick="window.location.href='login.html'">
+        Login
+    </button>
+      </div>
+      
+            </div>
+</div>
+
+
+
+ <script>
+$(document).ready(function() {
+  // Quando um botão de alternância é clicado
+  $(".nav-link").click(function() {
+    // Obtém o tipo de usuário a partir do atributo data-tipo
+    var tipoUsuario = $(this).data("tipo");
+    // Define o valor do input hidden com o tipo de usuário
+    $("#tipoUsuario").val(tipoUsuario);
+  });
+
+  // Quando o formulário é enviado
+  $("#formPessoaFisica").submit(function(event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+    var formData = $(this).serialize(); // Obtém os dados do formulário
+
+    // Envie os dados do formulário para o backend
+    $.ajax({
+      url: "seu_backend.php", // Substitua "seu_backend.php" pelo seu script de backend
+      type: "POST",
+      data: formData,
+      success: function(response) {
+        // Handle success
+        console.log(response);
+      },
+      error: function(xhr, status, error) {
+        // Handle error
+        console.error(xhr.responseText);
+      }
+    });
+  });
+});
+</script>
+
+
+
+
+  
+</body>
+</html>
