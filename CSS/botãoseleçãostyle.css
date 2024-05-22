@@ -3,7 +3,6 @@
     display: block !important;
   } 
  :root {
-    background-color: hsl(209, 76%, 6%);
     --on-color: hsl(251, 27%, 15%);
     --off-color: white;
     --toggle-bg: #5E503F;

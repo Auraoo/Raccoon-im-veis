@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- links cdn  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/botãoseleçãostyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     
@@ -71,7 +71,7 @@
       <div class="inline_telapqna">
       <div class="text-end ml-auto mr-2 align-content-center" >
         <h5 class="m-0 text-white" >
-        <?php echo $_SESSION['nome_usuario']; ?>
+        <?php echo $_SESSION['usernome']; ?>
         </h5>
       </div>
       
@@ -105,5 +105,5 @@
 </div>
     </nav>
   </header >
-  <script src="JS/botãoseleção.js"></script>
+  <script src="../JS/botãoseleção.js"></script>
  

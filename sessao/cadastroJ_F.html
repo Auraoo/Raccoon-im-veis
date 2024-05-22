@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barra de Navegação</title>
+  <link rel="shortcut icon" href="../assets/guaxinim-sem-fundo.ico" type="image/x-icon">
+
   <link rel="stylesheet" href="../CSS/cadastro_Userstyle.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -14,6 +16,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <!-- CSS personalizado -->
+
 </head>
 <body>
     
@@ -35,13 +38,22 @@
             <a class="nav-link" id="pessoaJuridica-tab" data-toggle="tab" href="#pessoaJuridica" role="tab" aria-controls="pessoaJuridica" aria-selected="false" data-tipo="2">Pessoa Jurídica</a>
           </li>
         </ul>
-<div class="tab-content" id="myTabContent">
+<div class="tab-content mb-5" id="myTabContent">
                 <!-- Formulário de Pessoa Física -->
   <div class="tab-pane fade show active" id="pessoaFisica" role="tabpanel" aria-labelledby="pessoaFisica-tab">
       <div class="shadow-box">
             <h4>Dados Pessoais</h4>
 
-            <form id="pessoa_fisica" action="../operacoes_CRUD/adicionar.php" method="post">
+            <form id="pessoa_fisica" action="../User_crud/adicionar.php" method="post">
+              
+              <div class="form-group">
+                <label for="nomeCompletoPF">@ de Usuario</label>
+                <input type="text" class="form-control" name="usernome" id="User@PF"  maxlength="15" 
+                pattern="[A-Za-z0-9]{0,15}" 
+                title="Apenas letras maiúsculas e minúsculas e números são permitidos, até 15 caracteres."
+                required>
+              </div>
+
                 <div class="form-group">
                   <label for="nomeCompletoPF">Nome Completo:</label>
                   <input type="text" class="form-control" name="nome" id="nomeCompletoPF">
@@ -87,15 +99,17 @@
                   <input type="password" class="form-control" name="senha" id="confirmarSenhaPF">
                 </div>
                 
-                <small>Ao continuar, concorda com nossa política de privacidade.</small><br>
+                <small>Ao continuar, concorda com nossa política de privacidade.</small>
+                <div class="my-form__row">
+                  <span>Ja tem uma conta?</span>
+                  <a href="../sessao/login.html" title="Reset Password">
+                      Login
+                  </a>
+              </div>
                 <input type="hidden" name="tipoUsuario" id="tipoUsuario" value="1">
                 <input type="submit" class="btn btn-primary mt-3" value="Cadastrar">
           </form>
       </div>
-      <small>Já possui cadastro? Facça seu login</small><br>
-      <button type="button" class="btn btn-primary" onclick="window.location.href='login.html'">
-        Login
-    </button>
   </div>
 
             <!-- Formulário de Pessoa Jurídica -->
@@ -103,6 +117,13 @@
             <div class="shadow-box">
         <h4>Dados da Empresa</h4>
         <form id="pessoa_juridica" action="../operacoes/adicionar.php" method="post">
+          <div class="form-group">
+            <label for="nomeCompletoPF">@ de Usuario</label>
+            <input type="text" class="form-control" name="usernome" id="User@PF"  maxlength="15" 
+            pattern="[A-Za-z0-9]{0,15}" 
+            title="Apenas letras maiúsculas e minúsculas e números são permitidos, até 15 caracteres."
+            required>
+          </div>
           <div class="form-group">
             <label for="razaoSocial">Razão Social:</label>
             <input type="text" class="form-control" name="nome" id="razaoSocial">
@@ -151,22 +172,20 @@
             <label for="confirmarSenhaPJ">Digite Novamente:</label>
             <input type="password" class="form-control" name="senha" id="confirmarSenhaPJ">
           </div>
-          <small>Ao continuar, concorda com nossa política de privacidade.</small><br>
+          <small>Ao continuar, concorda com nossa política de privacidade.</small>
+          <div class="my-form__row">
+            <span>Ja tem uma conta?</span>
+            <a href="../sessao/login.html" title="Reset Password">
+                Login
+            </a>
+        </div>
           <input type="hidden" name="tipoUsuario" id="tipoUsuario" value="2">
           <input type="submit" class="btn btn-primary mt-3" value="cadastrar">
-
         </form>
-        
       </div>
-      <div class="display-flex" >
-        <small>Já possui cadastro? Facça seu login</small><br>
-      <button type="button" class="btn btn-primary" onclick="window.location.href='login.html'">
-        Login
-    </button>
-      </div>
-      
-            </div>
+  </div>
 </div>
+
 
 
 

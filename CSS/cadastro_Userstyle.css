@@ -1,3 +1,7 @@
+.my-form__row {
+  display: flex;
+  gap: 1rem;
+}
 .navbar-brand img {
     max-height: 40px;
   }

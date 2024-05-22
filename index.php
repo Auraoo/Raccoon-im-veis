@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raccoon Imóveis</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="assets/guaxinim-sem-fundo.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="Raccon-im-veis/CSS/style.css">
     <!-- link css bootstratp -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-
     <!-- link dos icons do site -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -25,7 +26,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     // Verificar o tipo de usuário
     if($_SESSION['cargo_de_usuario'] == 1) {
         // Tipo de usuário é 1, mostrar o cabeçalho de um jeito
-        include_once 'conteudo/header_adm.php';  // header para o cargo tipo 1 (adm)
+        require 'conteudo/header_adm.php';  // header para o cargo tipo 1 (adm)
     } else {
         // se o cargo de usuário fot diferente de 1, mostrar o cabeçalho de outro jeito
         include 'conteudo/header_.php'; // header para usuarios normais (logados mas sem ser adm)
@@ -79,9 +80,25 @@ if(isset($_SESSION['cargo_de_usuario'])) {
   
     </main>
 
-   
     <script src="JS/main.js"></script>
-
+    
+    <?php include_once 'conteudo/footer.php' ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       // animação da logo não verbal 
+    var logo = document.getElementById("logoguaxinim");
+    var imagemPadrao = "assets/guaxinim2.png";
+    var imagemHover = "assets/guaxinim1.png";
+    
+    // Adiciona imagem quando o mause estiver em cima
+    logo.addEventListener("mouseover", function() {
+        this.src = imagemHover;
+    });
+    
+    // volta para imagem padrao quando o mause sair de cima
+    logo.addEventListener("mouseout", function() {
+        this.src = imagemPadrao;
+    });
+    </script>
 </body>
 </html>

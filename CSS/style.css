@@ -9,6 +9,31 @@
   --_clr-400: #Cabdad;/* #5E503F */
 
 }
+#logoteste{
+  height: 60px;
+}
+
+  #logoguaxinim {
+      width: 40px;
+      height: auto; /* Mantém a proporção da imagem automaticamente */
+      transition: width 0.3s ease; /* Adiciona uma transição suave */
+  }
+  #logoguaxinim2 {
+      margin-right: 20px !important;
+  }
+  @media (max-width: 557px) {
+      #logoguaxinim {
+          width: 50px;
+          height: auto; /* Mantém a proporção da imagem automaticamente */
+      }
+      #logoguaxinim2 {
+          width: 110px;
+          margin-right: 0 !important;
+      }
+      #diminuirTP {
+          width: 50px;
+      }
+  }
 .animacaotext {
   user-select: none;
 
@@ -249,6 +274,7 @@ video {
       font-size: calc(14px + 2vmin); /* Tamanho de fonte um pouco menor para dispositivos pequenos */
   }
 }
+
 
 body {
   background-color: #fff; /* Cor de fundo claro */

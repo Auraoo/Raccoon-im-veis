@@ -47,19 +47,3 @@ function setTheme(theme) {
     // Salva a preferência do usuário no armazenamento local (localStorage)
     localStorage.setItem('theme', theme);
 }
-
-        
-    // animação da logo não verbal 
-    var logo = document.getElementById("logoguaxinim");
-    var imagemPadrao = "../assets/guaxinim2.png";
-    var imagemHover = "../assets/guaxinim1.png";
-    
-    // Adiciona imagem quando o mause estiver em cima
-    logo.addEventListener("mouseover", function() {
-        this.src = imagemHover;
-    });
-    
-    // volta para imagem padrao quando o mause sair de cima
-    logo.addEventListener("mouseout", function() {
-        this.src = imagemPadrao;
-    });

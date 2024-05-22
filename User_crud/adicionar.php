@@ -3,6 +3,7 @@
 include '../conexao/config.php';
 
 // Recebendo os dados do formulário (campos basicos)
+$usernome = $_POST['usernome'];
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
@@ -11,7 +12,7 @@ $tipoUsuario = $_POST['tipoUsuario'];
 
 
 // inserindo os dados que foram pegos no method POST
-$query = "INSERT INTO usuario (nome, email, senha, telefone, tipo) VALUES ('$nome', '$email', '$senha', '$telefone', '$tipoUsuario')";
+$query = "INSERT INTO usuario (user_nome,nome, email, senha, telefone, tipo) VALUES ('$usernome','$nome', '$email', '$senha', '$telefone', '$tipoUsuario')";
 $result = mysqli_query($conexao, $query); // Executa a consulta
 
 if ($result) { // Se a consulta for bem-sucedida
@@ -39,7 +40,7 @@ if ($result) { // Se a consulta for bem-sucedida
 
     if ($result) {
         // Dados inseridos com sucesso em ambas as tabelas
-        header("Location: ../sessao/login.php");
+        header("Location: ../sessao/login.html");
     } else {
         // Se houver erro ao inserir dados na segunda tabela
         echo "Erro ao inserir dados na tabela secundária: " . mysqli_error($conexao);

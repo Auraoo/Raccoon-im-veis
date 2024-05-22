@@ -3,21 +3,47 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- links cdn  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     
-
+    <style>
+      #logoteste{
+        height: 60px;
+      }
+        #logoguaxinim {
+            width: 40px;
+            height: auto; /* Mantém a proporção da imagem automaticamente */
+            transition: width 0.3s ease; /* Adiciona uma transição suave */
+        }
+      
+        @media (max-width: 557px) {
+           .btn_tamanho{
+            width: 50px;
+           }
+            #logoguaxinim {
+                width: 50px;
+                height: auto; /* Mantém a proporção da imagem automaticamente */
+            }
+            #logoguaxinim2 {
+                width: 110px;
+                margin-right: 0 !important;
+            }
+            #diminuirTP {
+                width: 50px;
+            }
+            .tirartext{
+              display:none;
+            }
+        }
+    </style>
 
 <header class="dark-header text-center" >
     <nav class="navbar navbar-expand-lg  .dark">
-      <div >
       <div id="logoteste">
-        <img src="assets/guaxinim2.png" id="logoguaxinim" width="50px" alt="Minha Imagem">
-        <img src="assets/logoverbal.png " id="" class="mr-3" width="150px" alt="Minha Imagem">       
-        </div>
-      </div> 
+        <img src="assets/guaxinim2.png"   id="logoguaxinim" width="50px" alt="Minha Imagem">
+        <img src="assets/logoverbal.png " id="logoguaxinim2" class="mr-3" width="150px" alt="Minha Imagem">       
+      </div>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
           
@@ -25,10 +51,7 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="#funcinarios">Colaboradores</a>
           </li>
-          <!--link pagina de contatos e soobre-->
-          <!-- <li class="nav-item">
-            <a class="nav-link text-white" href="https://web.whatsapp.com/send?phone=5577998786866" target="_blank">Whatsapp</a>
-          </li> -->
+
           <!--link pagina de contatos e soobre-->
           <li class="nav-item">
             <a class="nav-link text-white" href="#">Sobre Nós</a>
@@ -43,37 +66,16 @@
             <a class="nav-link text-white" href="#voce">Para você!</a>
           </li> 
 
-
-          
-          
-          <!--Link duvidas-->
-          
-          <!-- <li class="nav-item">
-            <div class="dropdown" data-bs-theme="Dark">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
-              tema</button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
-                <li><a class="dropdown-item"  id="lightMode">Modo Claro</a></li>
-                <li><a class="dropdown-item"  id="darkMode">Modo Escuro</a></li>
-              
-              </ul>
-            </div>
-          </li> -->
         </ul>
-       
 
-        <!-- <form class="d-flex mr-2 " role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form> -->
         <ul class="navbar-nav">
         
        
         <li class="nav-item fundohover">
-            <a class="nav-link text-white" href="../sessao/login.html" ><i class="fas fa-sign-in-alt"></i>Login</a>
+            <a class="nav-link text-white" href="sessao/login.html" ><i class="fas fa-sign-in-alt"></i>Login</a>
           </li>
           <li class="nav-item fundohover">
-            <a class="nav-link text-white" href="../sessao/cadastroJ_F.html" ><i class="fas fa-user-plus"></i> Cadastro</a>
+            <a class="nav-link text-white" href="sessao/cadastroJ_F.html" ><i class="fas fa-user-plus"></i> Cadastro</a>
           </li>
         </ul>
       </div>
@@ -81,15 +83,15 @@
     
       
         <div class="containeresconder ml-auto" >
-            <div class="fundohover align-content-center" >
-             <a class="nav-link text-white" href="sessao/login.html" ><i class="fas fa-sign-in-alt"></i>Login <hr class="m-0" ></a>
+            <div class="fundohover align-content-center btn_tamanho" >
+             <a class="nav-link text-white" href='sessao/login.html' ><i class="fas fa-sign-in-alt"></i><span class="tirartext">Login</span><hrclass="m-0" ></a>
             </div>
-            <div class="fundohover align-content-center" >
-             <a class="nav-link text-white" href="sessao/cadastroJ_F.php"><i class="fas fa-user-plus"></i> Cadastro</a>
+            <div class="fundohover align-content-center btn_tamanho" >
+             <a class="nav-link text-white" href='sessao/cadastroJ_F.html'><i class="fas fa-user-plus"></i> <span class="tirartext">Cadastro</span></a>
             </div>
         </div>
         <div class="my-2" >
-          <label class="toggle m-0">
+          <label class="toggle m-0" id="diminuirTP" >
         <input type="checkbox" id="themeCheckbox" />
         <div class="off-knob align-content-center text-center justify-content-center" id="darkMode"><i class="material-icons text-white">brightness_3</i></div>
         <div class="on-knob align-content-center text-black" id="lightMode"><i class="material-icons">wb_sunny</i></div>
