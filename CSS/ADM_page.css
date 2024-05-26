@@ -7,14 +7,14 @@
     --gray-background: #EDEEF1;
     --gray-mid: #F1F2F6;
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    height: 70rem;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
     background: var(--background);
+    padding: 0px !important;
 }
 .form-group {
     margin-bottom: 15px;

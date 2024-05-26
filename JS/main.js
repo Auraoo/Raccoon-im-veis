@@ -19,7 +19,7 @@ function splitTextIntoSpans(target) {
 splitTextIntoSpans('.animacaotext')
 // seleção de tema para o site modo claro e modo escuro
         // seleciona informação da lista para mudar tema do site 
-        const lightModeButton = document.getElementById('lightMode');
+const lightModeButton = document.getElementById('lightMode');
 const darkModeButton = document.getElementById('darkMode');
 const container = document.getElementById('dark');
 const themeCheckbox = document.getElementById('themeCheckbox');
@@ -43,7 +43,13 @@ themeCheckbox.addEventListener('change', function() {
 
 function setTheme(theme) {
     // Adiciona a classe correspondente ao tema
-    container.classList.toggle('dark', theme === 'dark');
+    if (theme === 'dark') {
+        container.classList.remove('light');
+        container.classList.add('dark');
+    } else {
+        container.classList.remove('dark');
+        container.classList.add('light');
+    }
     // Salva a preferência do usuário no armazenamento local (localStorage)
     localStorage.setItem('theme', theme);
 }

@@ -1,13 +1,11 @@
-
-<!-- link dos icons do tema site -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- link dos icons do tema site -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- links cdn  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/botãoseleçãostyle.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    
+        
 
 
 <header class="dark-header text-center" >
@@ -68,13 +66,27 @@
     </form> -->
         
       </div>
-      <div class="inline_telapqna">
-      <div class="text-end ml-auto mr-2 align-content-center" >
-        <h5 class="m-0 text-white" >
-        <?php echo $_SESSION['usernome']; ?>
-        </h5>
-      </div>
-      
+      <div class="search-container">
+                            <form id="searchForm" action="../pesquisa_imoveis.php" method="GET">
+                                <input type="text" name="query" placeholder="Pesquisar produtos...">
+                                <button type="submit">Pesquisar</button>
+                            </form>
+                        </div>
+        <div class="ml-auto" >
+            <div class="inline_telapqna">
+                    <div class="align-content-center">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-0 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php echo $_SESSION['usernome']; ?>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">alguma coisa</li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sessao/logout.php">Sair</a></li>
+                            </ul>
+                        </div>
+                    </div>
         
         <div class="my-2" >
           <label class="toggle m-0">
@@ -106,4 +118,7 @@
     </nav>
   </header >
   <script src="../JS/botãoseleção.js"></script>
+  <script src="JS/botãoseleção.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
  

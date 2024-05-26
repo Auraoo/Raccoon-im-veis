@@ -1,5 +1,13 @@
-<?php session_start();
- ?>
+<?php
+session_start();
+$mostrarModal = false;
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+    $mostrarModal = true;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +22,104 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <!-- link dos icons do site -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+<!-- link para abrir tela via ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </head>
-<body id="dark">
+<style>
 
+/* caixa de de informação */
+.modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+
+            align-content: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+
+/* style do swiper  */
+        swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* tela que abre do lado estilo menu */
+         
+        #profileFrame {
+            position: fixed;
+            top: 93px;
+            right: -240px;
+            height: calc(90% - 56px);
+            width: 250px;
+            background-color:  rgb(45, 109, 109);
+            color: white;
+            padding: 0px 5px;
+            z-index: 5;
+            transition: right 0.3s;
+        }
+        @media screen and (max-width: 991px) {
+            #profileFrame{
+              height: calc(70% - 56px);
+
+            }
+           
+        }
+        #profileFrame.show {
+            right: 0;
+        }
+        .frame {
+    display: none;
+}
+
+.frame.show {
+    display: block;
+}
+        
+    </style>
+<body id="dark">
+  
 <?php
 // Verificar se o usuário está logado e possui um tipo definido na sessão
 if(isset($_SESSION['cargo_de_usuario'])) {
@@ -38,8 +138,6 @@ if(isset($_SESSION['cargo_de_usuario'])) {
 
 ?>
 
-
-
   <!--Background fixo video-->
   <!--Conteudoo-->
   <div class="video-background">
@@ -54,14 +152,16 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     </div>
   </div>
   
+    <div id="profileFrame" class="frame" >
+        <!-- Aqui será carregado o conteúdo via Ajax -->
+    </div>
+
     <!--SECTION CONTEUDO-->
     <main>
-        
-       <?php include 'mensagemlogar/informacao_mensagem.php' ?>
-        
+                
           <div class="b-example-divider"></div>
           
-          <div class="container col-xxl-8 px-4 py-5" id="dark">
+          <div class="container col-xxl-8 px-4 py-5">
               <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6 zoom-effect">
                   <img src="./assets/imagem contrato.webp" class="d-block mx-lg-auto img-fluid" alt="Imagen contrato" width="700" height="500" loading="lazy">
@@ -71,20 +171,58 @@ if(isset($_SESSION['cargo_de_usuario'])) {
                   <p class="lead">"Descubra o conforto e a conveniência do aluguel de casas com a Raccoon Imóveis. Oferecemos uma variedade de opções de residências, desde casas acolhedoras até espaçosas, para atender às suas necessidades. Conte com nossa equipe para encontrar o lar perfeito para você, tornando sua experiência de aluguel simples e satisfatória. Entre em contato agora para começar a sua busca!"
                   </p>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 mr-2">E-mail</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Contato!</button>
+                    <button type="button" onclick="checkLogin()"class="btn btn-primary btn-lg px-4 me-md-2 mr-2">E-mail</button>
+                    <button type="button" onclick="checkLogin()" class="btn btn-outline-secondary btn-lg px-4">Contato!</button>
                   </div>
                 </div>
               </div>
             </div>
-  
-    </main>
+        </main>
+        <?php include 'mensagemlogar/informacao_mensagem.php' ?>
+
+    <section class="mb-4" >
+        <h4>conheça nossos corretores!</h4>
+            <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
+                <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
+            </swiper-container>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
 
     <script src="JS/main.js"></script>
     
-    <?php include_once 'conteudo/footer.php' ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <?php require 'conteudo/footer.php' ?>
     <script>
+        // inicio do link para abrir tela
+$(document).ready(function(){
+    $('.color_button').on('click', function(event) {
+        $('#profileFrame').toggleClass('show');
+        $(this).toggleClass('active');
+        if ($('#profileFrame').hasClass('show')) {
+            // Carrega o conteúdo do perfil via Ajax
+            $('#profileFrame').load('menu.php');
+            // Altera o ícone para baixo quando o perfil é ativado
+            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_down</i>');
+        } else {
+            // Reverte o ícone para esquerda quando o perfil é desativado
+            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
+        }
+        // Impede que o clique seja propagado para o documento
+        event.stopPropagation();  
+    });
+
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.color_button').length && !$(event.target).closest('#profileFrame').length) {
+            $('#profileFrame').removeClass('show');
+            $('.color_button').removeClass('active');
+            // Reverte o ícone para esquerda quando o perfil é desativado
+            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
+        }
+    });
+});
+
+
+        // fin do link para abrir tela
        // animação da logo não verbal 
     var logo = document.getElementById("logoguaxinim");
     var imagemPadrao = "assets/guaxinim2.png";
@@ -100,5 +238,6 @@ if(isset($_SESSION['cargo_de_usuario'])) {
         this.src = imagemPadrao;
     });
     </script>
+    
 </body>
 </html>

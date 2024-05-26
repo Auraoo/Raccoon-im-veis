@@ -2,7 +2,7 @@
 include 'c:/xampp/htdocs/Raccoon-im-veis/conexao/config.php';
 
 // Diretório de upload
-$uploadDir = '/Raccoon-im-veis/uploads/';
+$uploadDir = '../Raccoon-im-veis/uploads/';
 
 // Verifica se o diretório de upload existe, se não, cria
 if (!is_dir($uploadDir)) {
@@ -48,6 +48,6 @@ $stmtCorretor->close();
 $conexao->close();
 
 // Redireciona ou exibe uma mensagem de sucesso
-header("Location: ../adm_page.php?success=1");
+header("Location: adm_page.php?success=1");
 exit;
 ?>

@@ -21,8 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['nome_usuario'] = $user['nome'];
         $_SESSION['email_usuario'] = $user['email'];
         $_SESSION['cargo_de_usuario'] = $user['cargo'];
-
+        $_SESSION['logado'] = true;
         header('Location: ../index.php');
+        exit();
     } else {
         echo "Email ou senha incorretos.";
     }

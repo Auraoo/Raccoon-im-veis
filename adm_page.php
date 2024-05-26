@@ -1,10 +1,11 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Imóveis</title>
-    <link rel="shortcut icon" href="../assets/guaxinim-sem-fundo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/guaxinim-sem-fundo.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,17 +15,59 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-    <link rel="stylesheet" href="../CSS/ADM_page.css">
+    <link rel="stylesheet" href="CSS/ADM_page.css">
+    <link rel="stylesheet" href="CSS/style.css">
 
 </head>
 <body>
-    
+    <?php include 'conteudo/header_adm.php' ?>
   <!-- Formulário de cadastro -->
-  
+  <style>
+        #formularios_cadastro {
+            display: none; /* Inicialmente escondida */
+            
+        }
+        #esconder_formularios{
+            margin-top: 80px;
+        }
+        #profileFrame {
+            position: fixed;
+            top: 93px;
+            right: -240px;
+            height: calc(90% - 56px);
+            width: 250px;
+            background-color:  rgb(45, 109, 109);
+            color: white;
+            padding: 0px 5px;
+            z-index: 5;
+            transition: right 0.3s;
+        }
+        @media screen and (max-width: 991px) {
+            #profileFrame{
+              height: calc(70% - 56px);
 
-  <div class="container mt-4 bg-white">
+            }
+           
+        }
+        #profileFrame.show {
+            right: 0;
+        }
+        .frame {
+    display: none;
+}
+
+.frame.show {
+    display: block;
+}
+        
+    </style>
+    <div id="profileFrame" class="frame" >
+        <!-- Aqui será carregado o conteúdo via Ajax -->
+    </div>
+<button id="esconder_formularios" >Formularios de cadastro</button>
+
+  <div class="container mt-4 pt-2 bg-white" id="formularios_cadastro" >
      
-        <hr>
         <!-- Abas para alternar entre Pessoa Física e Pessoa Jurídica -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
@@ -54,7 +97,13 @@
                             <input type="text" id="titulo" name="titulo" placeholder="Titulo" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="endereco" name="endereco" placeholder="endereço" required>
+                            <input type="text" id="Cidade" name="cidade" placeholder="Cidade:" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="Bairro" name="bairro" placeholder="Bairro:" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
                         </div>
                         <div class="form-group">
                             <input type="text" id="preco" name="preco" placeholder="preço" required>
@@ -63,15 +112,25 @@
                             <input type="number" id="corretorid" name="corretorid" placeholder="id_corretor" required>
                         </div>
                         <div class="form-group">
+                            <input type="text" id="tipo_imovel" name="tipo_imovel" placeholder="Tipo de imóvel (ex: casa, Apartamento, salão etc..)" required>
+                        </div>
+                        <div class="form-group">
                             <input type="number" id="quartos" name="quartos" placeholder="Quantos quartos?" required>
                         </div>
                         <div class="form-group">
                             <input type="text" id="area_contruida" name="area_construida" placeholder="medidas da Area Construida" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="preco" name="suite" placeholder="Possui Suite? quantas?" required>
+                            <input type="text" id="banheiro" name="banheiro" placeholder="Possui banheiro? quantos?" required>
                         </div>
+                        <div class="form-group" >
+                            <h5>Finalidade</h5>
 
+                            <input type="radio" name="finalidade" id="residencial" value="residencial" >
+                            <label for="residencial">Residencial</label>
+                            <input type="radio" name="finalidade" id="comercial" value="comercial" >
+                            <label for="comercial">Comercial</label>
+                        </div>
                         <div class="form-group" >
                             <h5>Garagem</h5>
 
@@ -79,6 +138,14 @@
                             <label for="garagem1">sim</label>
                             <input type="radio" name="garagem" id="garagem" value="Não" >
                             <label for="garagem">Não</label>
+                        </div>
+                        <div class="form-group" >
+                            <h5>Disponibilidade</h5>
+
+                            <input type="radio" name="disponibilidade" id="disponivel" value="Disponivel" >
+                            <label for="disponivel">Disponivel</label>
+                            <input type="radio" name="disponibilidade" id="indisponivel" value="Indisponivel" >
+                            <label for="indisponivel">Indisponivel</label>
                         </div>
                         <div class="form-group" >
                             <textarea name="descricao" id="descricao" placeholder="Informações imovel" ></textarea>
@@ -93,7 +160,7 @@
   <div class="tab-pane fade" id="pessoaJuridica" role="tabpanel" aria-labelledby="pessoaJuridica-tab">
             <div class="shadow-box">
                         <h4>Cadastro de Corretor</h4>
-                <form id="pessoa_juridica" action="Crud_corretores/inserir_corretor.php" method="POST" enctype="multipart/form-data">
+                <form id="pessoa_juridica" action="inserir_corretor.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="foto_corretor">Foto do Corretor</label>
                             <input type="file" id="foto_corretor" name="foto_corretor" accept="image/*" class="form-control" required>
@@ -119,6 +186,9 @@
       </div>
   </div>
 </div>
+</div>
+  <?php include 'ADM_CRUD/mostrar.php' ?>
+  
 
 
 
@@ -141,6 +211,18 @@ $(document).ready(function() {
  
   });
 });
+
+// script para esconder o formulario de cadastro(evitar poulição visual)
+document.getElementById('esconder_formularios').addEventListener('click', function() {
+            var div = document.getElementById('formularios_cadastro');
+            if (div.style.display === 'none' || div.style.display === '') {
+                div.style.display = 'block';
+                this.textContent = 'Fechar Formularios de Cadastro';
+            } else {
+                div.style.display = 'none';
+                this.textContent = 'Formularios de cadastro';
+            }
+        });
 </script>
 
 
@@ -155,11 +237,39 @@ $(document).ready(function() {
 
 
     
-    <hr>
+
     
-   
-    <?php include 'mostrar.php' ?>
-    <script src="../JS/ADM_page.js"></script>
+   <?php include 'conteudo/footer.php' ?>
+   <script>
+       // inicio do link para abrir tela
+$(document).ready(function(){
+    $('.color_button').on('click', function(event) {
+        $('#profileFrame').toggleClass('show');
+        $(this).toggleClass('active');
+        if ($('#profileFrame').hasClass('show')) {
+            // Carrega o conteúdo do perfil via Ajax
+            $('#profileFrame').load('../menu.php');
+            // Altera o ícone para baixo quando o perfil é ativado
+            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_down</i>');
+        } else {
+            // Reverte o ícone para esquerda quando o perfil é desativado
+            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
+        }
+        // Impede que o clique seja propagado para o documento
+        event.stopPropagation();  
+    });
+
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.color_button').length && !$(event.target).closest('#profileFrame').length) {
+            $('#profileFrame').removeClass('show');
+            $('.color_button').removeClass('active');
+            // Reverte o ícone para esquerda quando o perfil é desativado
+            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
+        }
+    });
+});
+   </script>
+    <script src="JS/ADM_page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

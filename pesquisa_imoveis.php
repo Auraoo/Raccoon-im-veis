@@ -9,6 +9,13 @@ $query = isset($_GET['query']) ? $_GET['query'] : '';
 // Prevenir SQL Injection
 $query = $conexao->real_escape_string($query);
 
+// estrutura do filtro do professor icaro \|/
+
+// $sql = "SELECT * FROM imoveis WHERE tipo = '$tipo' 
+// OR finalidade = '$finalidade' OR cidade = '$cidade'
+// OR bairro = '$bairro' OR quarto = '$quarto' 
+// OR banheiro = '$banheiro'";
+
 // Consultar o banco de dados
 $sql = "SELECT * FROM imoveis WHERE titulo LIKE '%$query%'";
 $result = $conexao->query($sql);
@@ -35,7 +42,9 @@ if ($result->num_rows == 0) {
     <meta charset="UTF-8">
     <title>Resultados da Pesquisa</title>
     <link rel="shortcut icon" href="assets/guaxinim-sem-fundo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/Raccon-im-veis/CSS/style.css">
 
+    <link rel="stylesheet" href="Raccon-im-veis/CSS/style.css">
 <link rel="stylesheet" href="Raccon-im-veis/CSS/style.css">
 <!-- link css bootstratp -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -87,7 +96,7 @@ main {
     align-items: center;
 }
 </style>
-<body>
+<body id="dark">
 <?php
 // Verificar se o usuário está logado e possui um tipo definido na sessão
 if(isset($_SESSION['cargo_de_usuario'])) {
@@ -137,11 +146,15 @@ if(isset($_SESSION['cargo_de_usuario'])) {
                     // Exibir resultados
                     while($row = $result->fetch_assoc()) {
                         echo "<div>";
+                        echo "<a href='imovel.php?id=" . $row['id'] . "'>";
+                        echo'<img src="Raccoon-im-veis/'.$row["imagem_principal"].'"  width="270px"> ';
                         echo "<h2>" . $row['titulo'] . "</h2>";
-                        echo "<p>" . $row['descricao'] . "</p>";
+                        // echo "<p>" . $row['descricao'] . "</p>";
                         echo "<p>endereço: ". $row['endereco'] . "</p>";
                         echo "<p>Preço: R$" . $row['preco'] . "</p>";
+                        echo "</a>";
                         echo "</div>";
+                        echo "<hr>";
                     }
                 } else {
                     echo "<p>Nenhum produto encontrado.</p>";
@@ -153,14 +166,13 @@ if(isset($_SESSION['cargo_de_usuario'])) {
         </main>
     </div>
            
-           
+<img src="" width="" alt="" srcset="">
 
 
 
-
-
+<img src="" alt="">
     
-       
+<?php include "conteudo/footer.php" ?>   
     <script>
         function updatePriceValue() {
             var priceRange = document.getElementById('priceRange');

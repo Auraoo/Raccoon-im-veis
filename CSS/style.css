@@ -12,26 +12,64 @@
 #logoteste{
   height: 60px;
 }
-
   #logoguaxinim {
-      width: 40px;
+      width: 45px;
       height: auto; /* Mantém a proporção da imagem automaticamente */
       transition: width 0.3s ease; /* Adiciona uma transição suave */
   }
-  #logoguaxinim2 {
-      margin-right: 20px !important;
+  #logoguaxinim2{
+    width: 120px;
   }
+  .search-container{
+    width: 40%;
+   margin-right: auto !important;
+    margin-left: auto;
+     }
+        .fundohover2:hover{
+border-radius: 10px 10px 0px 0px;
+background-color: #994e0d;
+}
+.navbar-toggler-icon {
+justify-items: center;
+align-items: center;
+justify-content: center;
+align-content: center;
+}
+.search-container{
+      
+      width: 50%;
+      margin-right: auto !important;
+      margin-left: auto !important;
+     }
   @media (max-width: 557px) {
-      #logoguaxinim {
-          width: 50px;
-          height: auto; /* Mantém a proporção da imagem automaticamente */
-      }
-      #logoguaxinim2 {
-          width: 110px;
-          margin-right: 0 !important;
-      }
+    .search-container{
+      
+     width: 50%;
+     margin-right: auto !important;
+     margin-left: auto !important;
+    }
+     .btn_tamanho{
+      width: 50px;
+     }
+     #logoguaxinim2{
+      width: 85px !important;
+     }
+
+     #logoguaxinim{
+      width: 35px !important;
+      height:auto !important ;
+      display: none;
+
+     }
+      
       #diminuirTP {
           width: 50px;
+      }
+      .tirartext{
+        display:none;
+      }
+      #acoes_C_L{
+        display: none !important;
       }
   }
 .animacaotext {
@@ -89,6 +127,10 @@
   border-radius: 10px;
   background-color: #334a55;
 
+}
+.fundohover2:hover{
+  border-radius: 10px;
+  background-color: #994e0d;
 }
 .inline_telapqna{
   display: inline-flex;
@@ -286,4 +328,8 @@ body {
 .dark {
   background-color: #333 !important; /* Cor de fundo escura */
   color: #fff !important; /* Cor do texto escura */
+}
+.light {
+  background-color: #fff !important; /* Cor de fundo escura */
+  color: black !important; /* Cor do texto escura */
 }

@@ -1,95 +1,36 @@
 
 <!-- link dos icons do tema site -->
+    <!-- link dos icons do tema site -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- links cdn  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     
-    <style>
-      #logoteste{
-        height: 60px;
-      }
-        #logoguaxinim {
-            width: 40px;
-            height: auto; /* Mantém a proporção da imagem automaticamente */
-            transition: width 0.3s ease; /* Adiciona uma transição suave */
-        }
-      
-        @media (max-width: 557px) {
-           .btn_tamanho{
-            width: 50px;
-           }
-            #logoguaxinim {
-                width: 50px;
-                height: auto; /* Mantém a proporção da imagem automaticamente */
-            }
-            #logoguaxinim2 {
-                width: 110px;
-                margin-right: 0 !important;
-            }
-            #diminuirTP {
-                width: 50px;
-            }
-            .tirartext{
-              display:none;
-            }
-        }
-    </style>
+
 
 <header class="dark-header text-center" >
-    <nav class="navbar navbar-expand-lg  .dark">
-      <div id="logoteste">
-        <img src="assets/guaxinim2.png"   id="logoguaxinim" width="50px" alt="Minha Imagem">
-        <img src="assets/logoverbal.png " id="logoguaxinim2" class="mr-3" width="150px" alt="Minha Imagem">       
+    <nav class="navbar navbar-expand-lg justify-content-center .dark">
+      <div id="logoteste" class="align-content-center ">
+        <img src="assets/guaxinim2.png"   id="logoguaxinim"  alt="Minha Imagem">
+        <img src="assets/logoverbal.png " id="logoguaxinim2"   alt="Minha Imagem">       
       </div>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-          
-          <!--Descer para o menu de imoveis empresa-->
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#funcinarios">Colaboradores</a>
-          </li>
-
-          <!--link pagina de contatos e soobre-->
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Sobre Nós</a>
-          </li>
-         
-          <!--Para sua empresa/ pessoa juridica-->
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#empresa">Para empresa!</a>
-          </li>
-          <!--Casas pessoa fisica-->
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#voce">Para você!</a>
-          </li> 
-
-        </ul>
-
-        <ul class="navbar-nav">
-        
-       
+      <div class="search-container">
+                            <form id="searchForm" class="d-flex" action="pesquisa_imoveis.php" method="GET">
+                                <input id="input_pesquisa" class="form-control mx-2" type="text" name="query" placeholder="Pesquisar produtos...">
+                            </form>
+                        </div>
+        <ul id="acoes_C_L" class="navbar-nav d-flex">
         <li class="nav-item fundohover">
-            <a class="nav-link text-white" href="sessao/login.html" ><i class="fas fa-sign-in-alt"></i>Login</a>
+            <a class="nav-link text-white px-2" href="sessao/login.html" ><i class="fas fa-sign-in-alt mr-1"></i><span class="tirartext">Faça seu Login</span></a>
           </li>
-          <li class="nav-item fundohover">
-            <a class="nav-link text-white" href="sessao/cadastroJ_F.html" ><i class="fas fa-user-plus"></i> Cadastro</a>
-          </li>
+          
         </ul>
-      </div>
-      <div class="inline_telapqna">
-    
+
+      <div class="inline_telapqna justify-content-end">
+        
       
-        <div class="containeresconder ml-auto" >
-            <div class="fundohover align-content-center btn_tamanho" >
-             <a class="nav-link text-white" href='sessao/login.html' ><i class="fas fa-sign-in-alt"></i><span class="tirartext">Login</span><hrclass="m-0" ></a>
-            </div>
-            <div class="fundohover align-content-center btn_tamanho" >
-             <a class="nav-link text-white" href='sessao/cadastroJ_F.html'><i class="fas fa-user-plus"></i> <span class="tirartext">Cadastro</span></a>
-            </div>
-        </div>
         <div class="my-2" >
           <label class="toggle m-0" id="diminuirTP" >
         <input type="checkbox" id="themeCheckbox" />
@@ -119,5 +60,42 @@
 </div>
     </nav>
   </header >
+  <nav class="navbar navbar-expand-lg  bg-dark" style="margin-top:75px;">
+  <div class="container-fluid">
+   
+    <button class="navbar-toggler bg-light " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><img src="assets/guaxinim-sem-fundo.ico" width="20px" alt="guaxinim"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+          <!--link pagina de contatos e soobre-->
+          <li class="nav-item fundohover2">
+            <a class="nav-link text-white" href="index.php">Home</a>
+          </li>
+
+          <!--Descer para o menu de imoveis empresa-->
+          <li class="nav-item fundohover2">
+            <a class="nav-link text-white" href="index.php#corretores">Colaboradores</a>
+          </li>
+
+          <!--Para sua empresa/ pessoa juridica-->
+          <li class="nav-item fundohover2">
+            <a class="nav-link text-white" href="#empresa">Para empresa!</a>
+          </li>
+          <!--Casas pessoa fisica-->
+          <li class="nav-item fundohover2">
+            <a class="nav-link text-white" href="#voce">Para você!</a>
+          </li> 
+      </ul>
+    </div>
+  </div>
+</nav>
   <script src="JS/botãoseleção.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+     document.getElementById('input_pesquisa').addEventListener('input', function() {
+            document.getElementById('searchform').submit();
+        });
+  </script>
  

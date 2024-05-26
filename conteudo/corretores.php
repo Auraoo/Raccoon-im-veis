@@ -1,152 +1,76 @@
-<style>
+  <style>
+        .info-container {
+            display: flex;
+            align-items: center;
+        }
+        .info-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .info-container .info {
+            padding-left: 15px;
+        }
 
-    .card{
-        display: flex;
-        flex-wrap: wrap;
-        border-radius: 1.5rem;
-        background: var(--card-bg);
-        cursor:pointer;
-        overflow: hidden;
-        color: var(--text);
-        max-width: clamp(20rem.70vw,46.25rem);
-        min-width: 20rem;
-        min-height: 17.5rem; 
-    }
-    .card:hover{
-        box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
-    }
-    .background{
-        flex:1 1 15rem;
-    }
-    .background img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .content{
-        flex: 3 1 22rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        padding:1rem;
-    }
-    .content> h2 {
-        font-size:clamp(1.3rem ,2.5vw, 1.8rem);
-        font-weight: 700;
-        margin-bottom: clamp(0.35rem, 2vw, 0.55rem) ;
-    }
-    .content > p {
-        font-size: clamp(1rem, 1.75vw, 1.1rem);
-        font-weight: 400;
-        margin: 0.4rem 0 ;
-    }
-    .content a {
-        color: var(--text);
-    }
-    .chips {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        list-style-type: none;
-        padding: 0.75 0px 1rem 0px;
-    }
-    .chip {
-        border-radius: 0.5rem;
-        padding: 0.25rem 0.5rem;
-        font-size: 0.9375rem;
-        background: var(--chip-bg);
-        transition:all 0.3s;
-        border: 1px solid var(--border);
-        font-weight: 500;
-    }
-    .chip:hover {
-        color: var(--text);
-        text-decoration: underline;
-    }
-    .action-buttons {
-        border-top: 1px solid var(--gray) ;
-        padding: 1rem;
-        gap: 0.75rem;
-        display: flex;
-        margin-top: auto;
-        flex-wrap: wrap;
-    }
-    .action-buttons a {
-        background: var(--primary);
-        color: var(--text-dark);
-        padding: 0.75rem;
-        text-decoration:none;
-        border-radius: 0.75rem;
-        outline: none;
-        border: none;
-        font-size: 1.125rem;
-        display: flex;
-        font-weight: bold;
-        justify-content: center;
-        align-items: center;
-        white-space: nowrap;
-        flex: 1 0 15rem;
-        max-width: 100%;
-    }
-    .action-buttons a:hover{
-        text-decoration: underline;
-    }
-    .action-buttons a.secondary{
-        background: inherit;
-        color: var(--text);
-        border:1px solid var(--text);
-        flex:1 0 5rem;
+    swiper-container {
+      width: 100%;
+      height: 100%;
     }
 
-</style>
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
 
-    <div class="container" >
-        <article class="card" >
-            <div class="background" >
-                <img src="assets/joao.jpeg" alt="">
-            </div>
-            <div class="content" >
-                <h2>Dominic wills</h2>
-                <p>
-                    senior full-stack enginer at 
-                    <a href="#" title="Google" >
-                        guguloo
-                    </a>
-                </p>
-                <p>helping with:</p>
-                <ul class="chips" >
-                    <li class="chip" >React.js</li>
-                    <li class="chip" >node.js</li>
-                    <li class="chip" >postgreeSQL</li>
-                </ul>
-                <div class="action-buttons" >
-                    <a href="#">
-                        book a lector
-                    </a>
-                    <a href="#" class="secondary" >
-                        learn more
-                    </a>
-                </div>
-            </div>
-        </article>
-    </div>
+  </style>
 
 
 
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30">
+    <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
+    </swiper-container>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script>
+    function updateSlidesPerView() {
+        const swiperContainer = document.querySelector('.mySwiper');
+        if (window.innerWidth >= 1024) {
+            swiperContainer.setAttribute('slides-per-view', '3');
+        } else if (window.innerWidth >= 814) {
+            swiperContainer.setAttribute('slides-per-view', '2');
+        } else {
+            swiperContainer.setAttribute('slides-per-view', '2');
+        }
+    }
 
+    // Update slides-per-view on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        updateSlidesPerView();
+        
+        // Initialize Swiper after setting slides-per-view
+        const swiper = new Swiper('.mySwiper', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            spaceBetween: 30,
+            slidesPerView: parseInt(document.querySelector('.mySwiper').getAttribute('slides-per-view')),
+        });
+    });
 
-<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
-    slides-per-view="3">
-    <swiper-slide>
-        Slide 1
+    // Update slides-per-view on window resize
+    window.addEventListener('resize', updateSlidesPerView);
+</script>
 
-    </swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide>
-    <swiper-slide>Slide 7</swiper-slide>
-    <swiper-slide>Slide 8</swiper-slide>
-    <swiper-slide>Slide 9</swiper-slide>
-  </swiper-container>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

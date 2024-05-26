@@ -27,16 +27,20 @@ $imovel = $result->fetch_assoc();
 // Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtém os dados do formulário
-    $titulo = $_POST['titulo'];
-    $descricao = $_POST['descricao'];
-    $endereco = $_POST['endereco'];
-    $preco = $_POST['preco'];
-    $corretor = $_POST['corretor'];
+    $titulo = !empty($_POST['titulo']) ? $_POST['titulo'] : $imovel['titulo'];
+    $cidade = !empty($_POST['cidade']) ? $_POST['cidade'] : $imovel['cidade'];
+    $bairro = !empty($_POST['bairro']) ? $_POST['bairro'] : $imovel['bairro'];
+    $tipo_imovel = !empty($_POST['tipo_imovel']) ? $_POST['tipo_imovel'] : $imovel['tipo'];
+    $endereco = !empty($_POST['endereco']) ? $_POST['endereco'] : $imovel['endereco'];
+    $preco = !empty($_POST['preco']) ? $_POST['preco'] : $imovel['preco'];
+    $corretor = !empty($_POST['corretor']) ? $_POST['corretor'] : $imovel['id_corretor'];
+    $disponibilidade = !empty($_POST['disponibilidade']) ? $_POST['disponibilidade'] : $imovel['disponibilidade'];
+    $descricao = !empty($_POST['descricao']) ? $_POST['descricao'] : $imovel['descricao'];
 
     // Atualiza os dados do imóvel no banco de dados
-    $sqlUpdate = "UPDATE Imoveis SET titulo=?, descricao=?, endereco=?, preco=?, id_corretor=? WHERE id=?";
+    $sqlUpdate = "UPDATE Imoveis SET titulo=?, cidade=?, bairro=?, tipo=?, descricao=?, endereco=?, preco=?, id_corretor=?, disponibilidade=? WHERE id=?";
     $stmt = $conexao->prepare($sqlUpdate);
-    $stmt->bind_param("ssssii", $titulo, $descricao, $endereco, $preco, $corretor, $imovelId);
+    $stmt->bind_param("sssssssisi", $titulo, $cidade, $bairro , $tipo_imovel, $descricao, $endereco, $preco, $corretor,$disponibilidade, $imovelId);
     $stmt->execute();
 
     // Redireciona de volta para a página de listagem de imóveis com uma mensagem de sucesso
@@ -46,18 +50,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conexao->close();
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Imóvel</title>
-</head>
-<body>
-    <h1>Editar Imóvel</h1>
-    <form method="POST">
-        <!-- Campos para edição -->
-    </form>
-</body>
-</html>

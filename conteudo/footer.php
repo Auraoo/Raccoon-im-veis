@@ -1,13 +1,10 @@
 
-<head>
-    <meta charset="UTF-8">
-    <title>Supabase like footer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-</head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
@@ -39,11 +36,6 @@
     box-sizing: border-box;
 }
 
-
-
-main {
-    height: 100%;
-}
 
 /*? footer containers */
 footer {
@@ -203,15 +195,13 @@ footer {
     }
 }
 </style>
-<body>
-    <main>
-    </main>
+
     <footer>
         <div class="footer-wrapper">
             <div class="footer-columns">
                 <div class="footer-logo-column">
-                    <a href="/" aria-label="Go to Supabase homepage" title="Go to Supabase Homepage">
-                        <img src="/assets/logoverbal.png" loading="lazy" alt="Supabase logo" class="footer-logo" width="200">
+                    <a href="#" aria-label="Go to Supabase homepage" title="Go to Supabase Homepage">
+                        <img src="assets/logoverbal.png" loading="lazy" alt="Supabase logo" class="footer-logo" width="200">
                     </a>
                     <div class="social-wrapper">
                         <div class='social-links'>
@@ -278,16 +268,16 @@ footer {
                             <h3>Navegação</h3>
                             <ul>
                                 <li>
-                                    <a href="#" title="Features">Home</a>
+                                    <a href="index.php" title="Features">Home</a>
                                 </li>
                                 <li>
-                                    <a href="#" title="Auth">Imoveis</a>
+                                    <a href="index.php#imoveis" title="Auth">Imoveis</a>
                                 </li>
                                 <li>
-                                    <a href="#" title="Functions">Corretores</a>
+                                    <a href="index.php#corretores" title="Functions">Corretores</a>
                                 </li>
                                 <li>
-                                    <a href="#" title="Realtime">Localização</a>
+                                    <a href="index.php#localizacao" title="Realtime">Localização</a>
                                 </li>
                             </ul>
                         </section>
@@ -315,7 +305,7 @@ footer {
         <!-- bottom part section -->
         <div class="footer-bottom">
             <div class="footer-bottom-wrapper">
-                <small>©<span>2024</span> by Gusttavo, Marcos Gean e Pedro.</small>
+                <small>©<span>2024</span> by Gustavo, Marcos Gean e Pedro.</small>
             </div>
         </div>
     </footer>

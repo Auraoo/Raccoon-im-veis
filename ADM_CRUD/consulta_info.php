@@ -1,5 +1,5 @@
 <?php
-include '../conexao/config.php';
+include 'conexao/config.php';
 
 // Consulta SQL para obter todas as propriedades e suas imagens
 $sql = "SELECT i.id, i.titulo, i.descricao, i.endereco, i.preco, i.id_corretor,i.imagem_principal, img.path, c.nome_emp AS nome_corretor
@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
     }
 } else {
     echo "Nenhum imóvel encontrado.";
-    exit;
+    
 }
 
 $conexao->close();

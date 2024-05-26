@@ -3,29 +3,35 @@ include '../conexao/config.php';
 
 // Obtém dados do formulário
 $titulo = $_POST['titulo'];
-$descricao = $_POST['descricao']; 
+$descricao = $_POST['descricao'];
+$cidade = $_POST['cidade'];
+$bairro = $_POST['bairro']; 
 $endereco = $_POST['endereco'];
 $preco = $_POST['preco'];
+$tipo = $_POST['tipo_imovel'];
+$finalidade = $_POST['finalidade'];
 $corretor = $_POST['corretorid'];
+$disponibilidade = $_POST['disponibilidade'];
+
 // campos da tabela especificacao
 $quartos = $_POST['quartos'];
 $garagem = $_POST['garagem'];
 $area_contruida = $_POST['area_construida'];
-$suite = $_POST['suite'];
+$banheiro = $_POST['banheiro'];
 
 // Diretório de upload
-$uploadDir = 'Raccoon-im-veis/uploads/';
+$uploadDir = '../Raccoon-im-veis/uploads/';
 
 
 // Prepara a consulta SQL para inserir os dados na tabela especificacao
-$sqlInsertEspecificacao = "INSERT INTO especificacao (quartos, garagem, area_contruida, suite) VALUES (?, ?, ?, ?)";
+$sqlInsertEspecificacao = "INSERT INTO especificacao (quartos, garagem, area_contruida, banheiro) VALUES (?, ?, ?, ?)";
 $stmtEspecificacao = $conexao->prepare($sqlInsertEspecificacao);
 
 if ($stmtEspecificacao === false) {
     die('Erro na preparação da consulta SQL: ' . htmlspecialchars($conexao->error));
 }
 
-$stmtEspecificacao->bind_param("isss", $quartos, $garagem, $area_contruida, $suite);
+$stmtEspecificacao->bind_param("isss", $quartos, $garagem, $area_contruida, $banheiro);
 $stmtEspecificacao->execute();
 
 if ($stmtEspecificacao->error) {
@@ -48,14 +54,14 @@ if (isset($_FILES['imagemdefault']) && $_FILES['imagemdefault']['error'] == 0) {
     die('Imagem principal não foi fornecida ou houve um erro no upload.');
 }
 // Prepara a consulta SQL para inserir os dados do imóvel
-$sqlInsertPropriedade = "INSERT INTO Imoveis (titulo, descricao, endereco, preco, imagem_principal, id_corretor, id_especificacao) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sqlInsertPropriedade = "INSERT INTO Imoveis (titulo, descricao ,cidade,bairro, endereco, preco, imagem_principal,disponibilidade, tipo, finalidade, id_corretor, id_especificacao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmtPropriedade = $conexao->prepare($sqlInsertPropriedade);
 
 if ($stmtPropriedade === false) {
-    die('Erro na preparação da consulta SQL: ' . htmlspecialchars($conexao->error));
+    die('Erro na preparação da consulta SQL : ' . htmlspecialchars($conexao->error));
 }
 
-$stmtPropriedade->bind_param("sssssis", $titulo, $descricao, $endereco, $preco, $imagem_principal, $corretor, $id_especificacao);
+$stmtPropriedade->bind_param("ssssssssssis", $titulo, $descricao, $cidade, $bairro, $endereco, $preco, $imagem_principal,$disponibilidade, $tipo, $finalidade, $corretor, $id_especificacao);
 $stmtPropriedade->execute();
 
 if ($stmtPropriedade->error) {
