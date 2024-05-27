@@ -25,19 +25,20 @@ if (isset($_FILES['foto_corretor']) && $_FILES['foto_corretor']['error'] == 0) {
 
 // Obtém dados do formulário
 $nome_emp = $_POST['nome_emp'];
-$senha_emp = $_POST['senha_emp'];
 $email_emp = $_POST['email_emp'];
+$telefone_emp = $_POST['telefone_emp'];
+$biografia_emp = $_POST['biografia_emp'];
 $id_corretora = $_POST['id_corretora'];
 
 // Prepara a consulta SQL para inserir os dados na tabela corretor_emp
-$sqlInsertCorretor = "INSERT INTO corretor_emp (foto_corretor, nome_emp,email_emp, senha_emp, id_corretora) VALUES (?, ?, ?, ?, ?)";
+$sqlInsertCorretor = "INSERT INTO corretor_emp (foto_corretor, nome_emp, email_emp, telefone_emp, biografia_emp, id_corretora) VALUES (?, ?, ?, ?, ?, ?)";
 $stmtCorretor = $conexao->prepare($sqlInsertCorretor);
 
 if ($stmtCorretor === false) {
     die('Erro na preparação da consulta SQL: ' . htmlspecialchars($conexao->error));
 }
 
-$stmtCorretor->bind_param("ssssi", $foto_corretor, $nome_emp,$email_emp, $senha_emp, $id_corretora);
+$stmtCorretor->bind_param("sssssi", $foto_corretor, $nome_emp,$email_emp, $telefone_emp, $biografia_emp, $id_corretora);
 $stmtCorretor->execute();
 
 if ($stmtCorretor->error) {
@@ -48,6 +49,6 @@ $stmtCorretor->close();
 $conexao->close();
 
 // Redireciona ou exibe uma mensagem de sucesso
-header("Location: adm_page.php?success=1");
+header("Location: ../adm_page.php?success=1");
 exit;
 ?>

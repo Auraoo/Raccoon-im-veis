@@ -34,7 +34,7 @@ require 'consulta_info.php'
                             <?php echo $imovel['titulo']; ?>
                         </td>
                         <td>
-                            <?php echo $imovel['preco']; ?>
+                          R$ <?php echo $imovel['preco']; ?>
                         </td>
                         <td>
                             <?php echo $imovel['endereco']; ?>

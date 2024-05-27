@@ -48,52 +48,124 @@ if ($result->num_rows == 0) {
 <link rel="stylesheet" href="Raccon-im-veis/CSS/style.css">
 <!-- link css bootstratp -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 <!-- link dos icons do site -->
 
 </head>
 <style>
-    
-    body{
-
-        height: 600px;
-    }
-    .margincima{
-        margin-top: 250px;
-    }
-    .layout{
-        display: grid;
-        gap: 4px;
-        grid-template-rows: 40px 40px auto 60px 60px 40px;
-        grid-template-columns: 1fr;
-        grid-template-areas: 'sidebar' 'main';
-        height: 100vh;
-    }
-    .grid {
-    display: grid;
-    grid-template-rows: auto 5rem;
-    grid-template-columns: 250px auto; /* Definindo o tamanho fixo do aside */
-    font-size: 1.5rem;
-    height: 100%;
+body {
+    height: 600px;
 }
-
-@media (max-width: 480px) {
-    .grid {
-        grid-template-rows:
-            auto 6rem;
-        grid-template-columns: 1fr;
-    }
-
-    main {
-        grid-column: 1 / 2;
-    }
-}
-
-aside,
 main {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    overflow: auto;
+}
+.margincima {
+    margin-top: 250px;
+}
+.layout {
+    display: grid;
+    gap: 4px;
+    grid-template-rows: 40px 40px auto 60px 60px 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'sidebar' 'main';
+    height: 100vh;
+}
+.grid {
+    display: grid;
+    grid-template-rows: auto 5rem;
+    grid-template-columns: 250px auto;
+    font-size: 1.5rem;
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    aside {
+        grid-row: 1;
+    }
+    main {
+        grid-column: 1 / -1;
+    }
+}
+@media (max-width: 532px) {
+    .imovel-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .imovel-imagem {
+        max-width: 100%;
+        margin: 0 0 16px 0;
+    }
+    .imovel-info {
+        text-align: center;
+    }
+}
+aside, main {
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+.link-desabilitar, .link-desabilitar:hover {
+    color: inherit;
+    text-decoration: none;
+}
+.endrereco_tf {
+    font-size: small;
+}
+.imovel-card .preco {
+    font-size: 24px;
+    color: green;
+    margin: 10px 0;
+}
+.imovel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.imovel-card {
+    border: 1px solid;
+    box-sizing: border-box;
+    text-align: left;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-color: green;
+}
+.imovel-card:hover {
+    transform: translateY(-0.1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.imovel-content {
+    display: flex;
+    align-items: flex-start;
+}
+.imovel-imagem {
+    max-width: 200px;
+    margin-right: 16px;
+}
+.imovel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.imovel-card h2 {
+    font-size: 1.5em;
+    margin: 0 0 8px 0;
+    text-align: start;
+}
+.imovel-card .endereco_tf,
+.imovel-card .preco {
+    margin: 4px 0;
 }
 </style>
 <body id="dark">
@@ -117,11 +189,11 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <h1 class="margincima" >Resultados da Pesquisa</h1>
     <div class="grid">
         <aside class="sidebar-left">
-            <form action="search.php" method="GET" id="searchForm">
+            <form action="pesquisa_imoveis.php" method="GET" id="searchForm">
                 <!-- Filtro por Preço -->
                 <div class="filter-section">
-                    <label for="priceRange">Preço: <span id="priceValue">0</span></label><br>
-                    <input type="range" id="priceRange" name="priceRange" min="0" max="10000" step="100" oninput="updatePriceValue()">
+                    <label for="preco">Preço: <span id="priceValue">0</span></label><br>
+                    <input type="range" id="priceRange" name="preco" min="0" max="1000000" step="100" oninput="updatePriceValue()">
                 </div><br>
 
                 <!-- Filtro por Quartos com Suíte -->
@@ -141,20 +213,26 @@ if(isset($_SESSION['cargo_de_usuario'])) {
             </form>
         </aside>
         <main>
+        <div class="imovel-container">
+                
             <?php
                 if ($result->num_rows > 0) {
                     // Exibir resultados
-                    while($row = $result->fetch_assoc()) {
-                        echo "<div>";
-                        echo "<a href='imovel.php?id=" . $row['id'] . "'>";
-                        echo'<img src="Raccoon-im-veis/'.$row["imagem_principal"].'"  width="270px"> ';
-                        echo "<h2>" . $row['titulo'] . "</h2>";
-                        // echo "<p>" . $row['descricao'] . "</p>";
-                        echo "<p>endereço: ". $row['endereco'] . "</p>";
-                        echo "<p>Preço: R$" . $row['preco'] . "</p>";
-                        echo "</a>";
-                        echo "</div>";
-                        echo "<hr>";
+                 while($row = $result->fetch_assoc()) {
+                    echo "<div class='imovel-card'>";
+                    echo "<a class='link-desabilitar' href='imovel.php?id=" . $row['id'] . "'>";
+                    echo '<div class="imovel-content">';
+                    echo '<img src="Raccoon-im-veis/' . $row["imagem_principal"] . '" class="imovel-imagem"> ';
+                    echo '<div class="imovel-info">';
+                    echo "<h2>" . $row['titulo'] . "</h2>";
+                    echo "<p class='endereco_tf'>endereço: " . $row['endereco'] . "</p>";
+                    echo "<p class='preco'>Preço: R$" . $row['preco'] . "</p>";
+                    echo "<p>tipo:" . $row['tipo'] . "</p>";
+                    echo "</div>"; // .imovel-info
+                    echo "</div>"; // .imovel-content
+                    echo "</a>";
+                    echo "</div>";
+                        
                     }
                 } else {
                     echo "<p>Nenhum produto encontrado.</p>";
@@ -163,6 +241,8 @@ if(isset($_SESSION['cargo_de_usuario'])) {
                 // Fechar conexão
                 $conexao->close();
             ?>
+
+</div>
         </main>
     </div>
            
@@ -181,6 +261,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
         }
     </script>
     <script src="JS/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 </body>
 </html>

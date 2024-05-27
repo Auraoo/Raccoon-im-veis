@@ -159,7 +159,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <!--SECTION CONTEUDO-->
     <main>
                 
-          <div class="b-example-divider"></div>
+          <div class="b-example-divider" style ></div>
           
           <div class="container col-xxl-8 px-4 py-5">
               <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -180,6 +180,8 @@ if(isset($_SESSION['cargo_de_usuario'])) {
         </main>
         <?php include 'mensagemlogar/informacao_mensagem.php' ?>
 
+
+        
     <section class="mb-4" >
         <h4>conheça nossos corretores!</h4>
             <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">

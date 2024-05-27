@@ -10,12 +10,15 @@ $senha = $_POST['senha'];
 $telefone = $_POST['telefone'];
 $tipoUsuario = $_POST['tipoUsuario'];
 
+$senha_criptografada = password_hash($senha, PASSWORD_BCRYPT);
 
-// inserindo os dados que foram pegos no method POST
-$query = "INSERT INTO usuario (user_nome,nome, email, senha, telefone, tipo) VALUES ('$usernome','$nome', '$email', '$senha', '$telefone', '$tipoUsuario')";
-$result = mysqli_query($conexao, $query); // Executa a consulta
+// Inserindo os dados que foram pegos no method POST com proteção contra SQL Injection
+$query = "INSERT INTO usuario (user_nome, nome, email, senha, telefone, tipo) VALUES (?, ?, ?, ?, ?, ?)";
+$stmt = mysqli_prepare($conexao, $query);
+mysqli_stmt_bind_param($stmt, 'sssssi', $usernome, $nome, $email, $senha_criptografada, $telefone, $tipoUsuario);
+mysqli_stmt_execute($stmt);
 
-if ($result) { // Se a consulta for bem-sucedida
+if (mysqli_stmt_affected_rows($stmt) > 0) { // Se a consulta for bem-sucedida
     $usuarioID = mysqli_insert_id($conexao); // Obter o ID do usuário inserido
 
     // Se for Pessoa Física

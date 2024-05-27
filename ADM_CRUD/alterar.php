@@ -9,7 +9,7 @@ if (!isset($_POST['imovel_id'])) {
 
 $imovelId = $_POST['imovel_id'];
 
-// Consulta SQL para obter os dados do imóvel
+// Consulta SQL para obter os dados do imóvel no BD
 $sql = "SELECT * FROM Imoveis WHERE id = ?";
 $stmt = $conexao->prepare($sql);
 $stmt->bind_param("i", $imovelId);
@@ -27,6 +27,7 @@ $imovel = $result->fetch_assoc();
 // Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtém os dados do formulário
+    //se ele não for preenchido volta para o valor normal já armazenado
     $titulo = !empty($_POST['titulo']) ? $_POST['titulo'] : $imovel['titulo'];
     $cidade = !empty($_POST['cidade']) ? $_POST['cidade'] : $imovel['cidade'];
     $bairro = !empty($_POST['bairro']) ? $_POST['bairro'] : $imovel['bairro'];
@@ -37,14 +38,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $disponibilidade = !empty($_POST['disponibilidade']) ? $_POST['disponibilidade'] : $imovel['disponibilidade'];
     $descricao = !empty($_POST['descricao']) ? $_POST['descricao'] : $imovel['descricao'];
 
-    // Atualiza os dados do imóvel no banco de dados
+    // Atualiza os dados do imóvel no BD
     $sqlUpdate = "UPDATE Imoveis SET titulo=?, cidade=?, bairro=?, tipo=?, descricao=?, endereco=?, preco=?, id_corretor=?, disponibilidade=? WHERE id=?";
     $stmt = $conexao->prepare($sqlUpdate);
     $stmt->bind_param("sssssssisi", $titulo, $cidade, $bairro , $tipo_imovel, $descricao, $endereco, $preco, $corretor,$disponibilidade, $imovelId);
     $stmt->execute();
 
-    // Redireciona de volta para a página de listagem de imóveis com uma mensagem de sucesso
-    header('Location: adm_page.php#Imoveis');
+    // Redireciona de volta para a página de cadastro do adm
+    header('Location: ../adm_page.php#Imoveis');
     exit;
 }
 

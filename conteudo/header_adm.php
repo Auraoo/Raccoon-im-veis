@@ -68,8 +68,8 @@
     <script>
         // animação da logo não verbal 
         var logo = document.getElementById("logoguaxinim");
-        var imagemPadrao = "../assets/guaxinim2.png";
-        var imagemHover = "../assets/guaxinim1.png";
+        var imagemPadrao = "assets/guaxinim2.png";
+        var imagemHover = "assets/guaxinim1.png";
 
         // Adiciona imagem quando o mouse estiver em cima
         logo.addEventListener("mouseover", function() {

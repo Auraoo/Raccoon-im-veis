@@ -38,11 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexao->close();
 
     // Redireciona de volta para a página de listagem de imóveis com uma mensagem de sucesso
-    header("Location: adm_page.php");
+    header("Location: ../adm_page.php");
     exit;
 } else {
     // Se o método de requisição não for POST, redireciona de volta
-    header("Location: adm_page.php?erro_em_algo");
+    header("Location: ../adm_page.php?erro_em_algo");
     exit;
 }
 ?>

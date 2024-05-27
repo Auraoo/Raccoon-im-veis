@@ -9,6 +9,52 @@
   --_clr-400: #Cabdad;/* #5E503F */
 
 }
+body {
+  background-color: #fff; /* Cor de fundo claro */
+  color: #000; /* Cor do texto claro */
+}
+
+.dark {
+  background-color: #333 !important; /* Cor de fundo escura */
+  color: #fff !important; /* Cor do texto escura */
+}
+.light {
+  background-color: #fff !important; /* Cor de fundo escura */
+  color: black !important; /* Cor do texto escura */
+}
+.text-responsive{
+  font-size: 13px !important;
+}
+.text-responsive
+.corretor_background_container{
+  background-color: green;
+  
+}
+.corretor_background_div{
+  background-color: #c5c20e;
+}
+.corretor_background_info{
+  background-color: #138cc4;
+}
+.corretor_nome{
+  color: rebeccapurple;
+}
+.corretor_telefone{
+  color: #c5c20e;
+}
+.corretor_email{
+  font-size:10px;
+  margin: 0;
+  color: #994e0d;
+}
+.corretor_biografia{
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 15px;
+  color:rgb(51, 255, 0) !important;
+}
+      
 #logoteste{
   height: 60px;
 }
@@ -318,18 +364,3 @@ video {
 }
 
 
-body {
-  background-color: #fff; /* Cor de fundo claro */
-  color: #000; /* Cor do texto claro */
-}
-
-
-
-.dark {
-  background-color: #333 !important; /* Cor de fundo escura */
-  color: #fff !important; /* Cor do texto escura */
-}
-.light {
-  background-color: #fff !important; /* Cor de fundo escura */
-  color: black !important; /* Cor do texto escura */
-}

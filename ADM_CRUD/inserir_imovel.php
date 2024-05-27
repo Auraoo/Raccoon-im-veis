@@ -106,6 +106,6 @@ foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
 $conexao->close();
 
 // Redireciona ou exibe uma mensagem de sucesso
-header("Location: adm_page.php?success=1");
+header("Location: ../adm_page.php?success=1");
 exit;
 ?>

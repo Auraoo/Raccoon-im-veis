@@ -38,7 +38,7 @@ session_start();
                             // Tipo de usuário é 1, mostrar o cabeçalho de um jeito
                             echo '
                             <li class="nav-item">
-                                <a class="  text-white" href="ADM_CRUD/adm_page.php">ADM</a>
+                                <a class="  text-white" href="adm_page.php">ADM</a>
                             </li>';  // header para o cargo tipo 1 (adm)
                         } else {
                             // se o cargo de usuário fot diferente de 1, mostrar o cabeçalho de outro jeito

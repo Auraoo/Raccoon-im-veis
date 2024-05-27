@@ -1,7 +1,7 @@
 <?php
 include 'conexao/config.php';
 
-// Consulta SQL para obter todas as propriedades e suas imagens
+// Consulta SQL para obter todas as especificação e suas imagens do imovel
 $sql = "SELECT i.id, i.titulo, i.descricao, i.endereco, i.preco, i.id_corretor,i.imagem_principal, img.path, c.nome_emp AS nome_corretor
 FROM Imoveis i
 LEFT JOIN imagens img ON i.id = img.imoveis_id

@@ -1,7 +1,7 @@
 <?php 
 include '/xampp/htdocs/Raccoon-im-veis/conexao/config.php';
-
-$sql = "SELECT cp.id_emp, cp.foto_corretor, cp.nome_emp, cp.email_emp,cp.telefone,cp.biografia, c.nome AS corretora_nome 
+//consulta para pegar os dados do 
+$sql = "SELECT cp.id_emp, cp.foto_corretor, cp.nome_emp, cp.email_emp,cp.telefone_emp,cp.biografia_emp, c.nome AS corretora_nome 
 FROM corretor_emp cp
 join corretora c on cp.id_corretora = c.id";
 $result = $conexao->query($sql);
@@ -14,21 +14,24 @@ if ($result->num_rows > 0) {
         $row['nome_emp'];
         $row['email_emp'];
         $row['foto_corretor'];
-        $row['telefone'];
-        $row['biografia'];
+        $row['telefone_emp'];
+        $row['biografia_emp'];
         $row['corretora_nome'];
          echo ' 
         <swiper-slide>
-        <div class="container">
-        <div class="row info-container">
+        <div class="container p-2">
+        <div class="row info-container  corretor_background_div">
             <div class="col-md-4">
                 <img src="Raccon-im-veis/'.$row['foto_corretor'].'" alt="Imagem Exemplo">
             </div>
-            <div class="col-md-8 info">
-                <h2>'.$row['nome_emp'].'</h2>
-                <p>Email: '.$row['email_emp'].'</p>
-                <p>'.$row['telefone'].'</p>
-                <p>'.$row['biografia'].'</p>
+            <div class="col-md-8 info corretor_background_info">
+                <h4 class="corretor_nome">'.$row['nome_emp'].'</h4>
+                <p class="corretor_email text-responsive">Email: '.$row['email_emp'].'</p>
+                <div class="d-flex">
+                <p class="corretor_email text-responsive">Corretora: '.$row['corretora_nome'].'</p>
+                <p class="corretor_telefone text-responsive">'.$row['telefone_emp'].'</p>
+                </div>
+                <p class="corretor_biografia">'.$row['biografia_emp'].'</p>
             </div>
         </div>
     </div>

@@ -82,7 +82,7 @@
   <div class="tab-pane fade show active " id="cadastro_imovel" role="tabpanel" aria-labelledby="imovelcadastro-tab">
       <div class="shadow-box">
             <h4>Cadastro de Imóveis</h4>
-                    <form id="cadastro_imovel" action="inserir_imovel.php" method="POST" enctype="multipart/form-data">
+                    <form id="cadastro_imovel" action="ADM_CRUD/inserir_imovel.php" method="POST" enctype="multipart/form-data">
                     
                         <div class="form-group">
                             <label for="imagemdefault">Imagem Principal</label>
@@ -160,7 +160,7 @@
   <div class="tab-pane fade" id="pessoaJuridica" role="tabpanel" aria-labelledby="pessoaJuridica-tab">
             <div class="shadow-box">
                         <h4>Cadastro de Corretor</h4>
-                <form id="pessoa_juridica" action="inserir_corretor.php" method="POST" enctype="multipart/form-data">
+                <form id="pessoa_juridica" action="ADM_CRUD/inserir_corretor.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="foto_corretor">Foto do Corretor</label>
                             <input type="file" id="foto_corretor" name="foto_corretor" accept="image/*" class="form-control" required>
@@ -174,9 +174,11 @@
                             <input type="email" id="email_emp" name="email_emp" class="form-control" placeholder="examplo@email.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="senha_emp">Senha</label>
-                            <input type="password" id="senha_emp" name="senha_emp" class="form-control" placeholder="Senha" required>
+                            <label for="telefone_emp">telefone</label>
+                            <input type="text" id="telefone_emp" name="telefone_emp" oninput="validarInput(this)" title="A entrada deve conter apenas '() , -' e números." class="form-control" placeholder="example (00) 00000-0000" required>
                         </div>
+                        <label for="biografia_emp">Biografia</label><br>
+                        <textarea name="biografia_emp" id="biografia_emp"></textarea>
                         <div class="form-group">
                             <label for="id_corretora">ID da Corretora</label>
                             <input type="number" id="id_corretora" name="id_corretora" class="form-control" placeholder="ID da Corretora" required>
@@ -194,6 +196,10 @@
 
 
  <script>
+    function validarInput(input) {
+            // Remove caracteres que não são permitidos
+            input.value = input.value.replace(/[^\d()\s-]/g, '');
+        }
 $(document).ready(function() {
   // Quando um botão de alternância é clicado
   $(".nav-link").click(function() {
