@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap");
+
+img {
+  max-width: 100%;
+}
+
+.font_seria {
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  .font_seria2 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+  }
+.gallery {
+  width: 100%
+    /*min(100vw, 1440px)*/
+  ;
+  display: flex;
+  height: 382px;
+  flex-direction: column;
+  padding-block: 1rem;
+  row-gap: 1rem;
+  border-radius: 10px;
+  & .image-container {
+    flex: 1;
+    width: 100%;
+    height: 350px;
+    transition: flex 0.5s ease-in;
+
+    @media only screen and (width > 480px) {
+      &:hover {
+        flex: 5;
+      }
+    }
+
+    & .image {
+      height: 350px;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  @media screen and (width > 480px) {
+    flex-direction: row;
+
+    & .image-container {
+      width: calc(100% / 5);
+    }
+  }
+}
+.imagem_informaçãoprincipal {
+      background-color:#e6e6e6;
+
+  /* background-color: white; */
+  width: 430px;
+  padding:    10px;
+  border-radius: 50% 50% 0 0;
+}
+#btncolor{
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  padding: 9px !important;
+  gap: .5rem;
+  border-radius: 0.5rem;
+  font-size: 1.0rem;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  background-color:#C6AC8F;
+  
+  & .spanbtn{
+    position: relative;
+    z-index: 3;
+    letter-spacing: 1px;
+    color: white;
+  }
+
+  & .overlay{
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #22333B;
+    z-index: 0;
+    clip-path: circle(12% at -49% 49%);
+    transition: all .3s ease-in;
+  }
+  
+  &:hover{
+    cursor: pointer;
+
+    & .overlay{
+      clip-path: circle(120% at 76% 49%);
+     }
+  }
+}
+.testecoisas {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  margin-right: 140px;
+}
+.sexo{
+  /* background-color: red; */
+}
+
+.info_foto {
+  /* background-color:#e6e6e6; */
+  margin-top: 63px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  /* Distribui espaço uniformemente */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.preço_imovel{
+  color:green;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+.descricao_extra{
+  background-color: #22333B;
+  color: white;
+  padding: 50px;
+  border-radius: 10px;
+}
+/* pegando os trem lá do cara  */
+.card_corretor {
+display: flex;
+flex-wrap:nowrap;
+border-radius: 1.5rem;
+background: var(--card_corretor-bg);
+cursor: pointer;
+overflow: hidden;
+width: 100%;
+height: auto;
+color: var(--text);
+/* max-width: clamp(
+    20rem, 70vw, 46.25rem
+);
+min-width: 3rem;
+min-height: 17.5rem; */
+}
+
+.card_corretor:hover {
+box-shadow: 
+rgba(0, 0, 0, 0.35) 
+    0px 5px 15px;
+}
+
+.background {
+flex: 1 1 15rem;
+}
+
+.background img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.content {
+flex: 3 1 22rem;
+display: flex;
+flex-direction: column;
+justify-content: start;
+padding: 1rem;
+}
+.bg_biografia{
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #232323;
+}
+.content > h2 {
+font-size: clamp(
+    1.3rem, 2.5vw, 
+    1.8rem);
+font-weight: 700;
+margin-bottom: clamp(
+    0.35rem, 2vw, 
+    0.55rem
+);
+}
+
+.content > p {
+font-size: clamp(1rem, 
+    1.75vw, 1.1rem);
+font-weight: 400;
+margin: 0.4rem 0;
+}
+
+.content a {
+color: var(--text);
+}
+
+.chips {
+display: flex;
+gap: 0.5rem;
+flex-wrap: wrap;
+list-style-type: none;
+padding: 0.75rem 0px 1rem 0px;
+}
+
+.chip {
+border-radius: 0.5rem;
+padding: 0.25rem 0.5rem;
+font-size: 0.9375rem;
+background: var(--chip-bg);
+transition: all 0.3s;
+border: 1px solid var(--border);
+font-weight: 500;
+}
+
+.chip:hover {
+color: var(--text);
+text-decoration: underline;
+}
+:root {
+--background: #0F0F0F;
+--card_corretor-bg: #232323;
+--chip-bg: #161B26;
+--border: #A4A4AA;
+--text: #FBFBFC;
+--text-dark: #010101;
+--primary: #F7C076;
+}

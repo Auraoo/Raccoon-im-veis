@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,78 +20,84 @@
     <link rel="stylesheet" href="CSS/style.css">
 
 </head>
+
 <body>
     <?php include 'conteudo/header_adm.php' ?>
-  <!-- Formulário de cadastro -->
-  <style>
+    <!-- Formulário de cadastro -->
+    <style>
         #formularios_cadastro {
-            display: none; /* Inicialmente escondida */
-            
+            display: none;
+            /* Inicialmente escondida */
+
         }
-        #esconder_formularios{
+
+        #esconder_formularios {
             margin-top: 80px;
         }
+
         #profileFrame {
             position: fixed;
             top: 93px;
             right: -240px;
             height: calc(90% - 56px);
             width: 250px;
-            background-color:  rgb(45, 109, 109);
+            background-color: rgb(45, 109, 109);
             color: white;
             padding: 0px 5px;
             z-index: 5;
             transition: right 0.3s;
         }
+
         @media screen and (max-width: 991px) {
-            #profileFrame{
-              height: calc(70% - 56px);
+            #profileFrame {
+                height: calc(70% - 56px);
 
             }
-           
+
         }
+
         #profileFrame.show {
             right: 0;
         }
-        .frame {
-    display: none;
-}
 
-.frame.show {
-    display: block;
-}
-        
+        .frame {
+            display: none;
+        }
+
+        .frame.show {
+            display: block;
+        }
     </style>
-    <div id="profileFrame" class="frame" >
+    <div id="profileFrame" class="frame">
         <!-- Aqui será carregado o conteúdo via Ajax -->
     </div>
-<button id="esconder_formularios" >Formularios de cadastro</button>
+    <button id="esconder_formularios">Formularios de cadastro</button>
 
-  <div class="container mt-4 pt-2 bg-white" id="formularios_cadastro" >
-     
+    <div class="container mt-4 pt-2 bg-white" id="formularios_cadastro">
+
         <!-- Abas para alternar entre Pessoa Física e Pessoa Jurídica -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" style="text-decoration: none;" id="imovelcadastro-tab" data-toggle="tab" href="#cadastro_imovel" role="tab" aria-controls="pessoaFisica" aria-selected="true" data-tipo="1">Cadastro de Imovel</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="text-decoration: none;"  id="pessoaJuridica-tab" data-toggle="tab" href="#pessoaJuridica" role="tab" aria-controls="pessoaJuridica" aria-selected="false" data-tipo="2">Cadastro de Corretor</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link active" style="text-decoration: none;" id="imovelcadastro-tab" data-toggle="tab" href="#cadastro_imovel" role="tab" aria-controls="pessoaFisica" aria-selected="true" data-tipo="1">Cadastro de Imovel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="text-decoration: none;" id="pessoaJuridica-tab" data-toggle="tab" href="#pessoaJuridica" role="tab" aria-controls="pessoaJuridica" aria-selected="false" data-tipo="2">Cadastro de Corretor</a>
+            </li>
         </ul>
-<div class="tab-content mb-5" id="myTabContent">
-                <!-- Formulário de Pessoa Física id="propertyForm" -->
-  <div class="tab-pane fade show active " id="cadastro_imovel" role="tabpanel" aria-labelledby="imovelcadastro-tab">
-      <div class="shadow-box">
-            <h4>Cadastro de Imóveis</h4>
+        <div class="tab-content mb-5" id="myTabContent">
+            <!-- Formulário de Pessoa Física id="propertyForm" -->
+            <div class="tab-pane fade show active " id="cadastro_imovel" role="tabpanel" aria-labelledby="imovelcadastro-tab">
+                <div class="shadow-box">
+                    <h4>Cadastro de Imóveis</h4>
                     <form id="cadastro_imovel" action="ADM_CRUD/inserir_imovel.php" method="POST" enctype="multipart/form-data">
-                    
+
                         <div class="form-group">
                             <label for="imagemdefault">Imagem Principal</label>
                             <input type="file" id="imagemdefault" name="imagemdefault" accept="image/*" placeholder="Imagem Pricipal">
                         </div>
-                    
+
                         <div class="form-group">
-                        <label for="images[]">Imagem secundarias</label>
+                            <label for="images[]">Imagem secundarias</label>
                             <input type="file" id="images" name="images[]" accept="image/*" placeholder="Imagens" multiple required>
                         </div>
                         <div class="form-group">
@@ -123,44 +130,44 @@
                         <div class="form-group">
                             <input type="text" id="banheiro" name="banheiro" placeholder="Possui banheiro? quantos?" required>
                         </div>
-                        <div class="form-group" >
+                        <div class="form-group">
                             <h5>Finalidade</h5>
 
-                            <input type="radio" name="finalidade" id="residencial" value="residencial" >
+                            <input type="radio" name="finalidade" id="residencial" value="residencial">
                             <label for="residencial">Residencial</label>
-                            <input type="radio" name="finalidade" id="comercial" value="comercial" >
+                            <input type="radio" name="finalidade" id="comercial" value="comercial">
                             <label for="comercial">Comercial</label>
                         </div>
-                        <div class="form-group" >
+                        <div class="form-group">
                             <h5>Garagem</h5>
 
-                            <input type="radio" name="garagem" id="garagem1" value="Sim" >
+                            <input type="radio" name="garagem" id="garagem1" value="Sim">
                             <label for="garagem1">sim</label>
-                            <input type="radio" name="garagem" id="garagem" value="Não" >
+                            <input type="radio" name="garagem" id="garagem" value="Não">
                             <label for="garagem">Não</label>
                         </div>
-                        <div class="form-group" >
+                        <div class="form-group">
                             <h5>Disponibilidade</h5>
 
-                            <input type="radio" name="disponibilidade" id="disponivel" value="Disponivel" >
+                            <input type="radio" name="disponibilidade" id="disponivel" value="Disponivel">
                             <label for="disponivel">Disponivel</label>
-                            <input type="radio" name="disponibilidade" id="indisponivel" value="Indisponivel" >
+                            <input type="radio" name="disponibilidade" id="indisponivel" value="Indisponivel">
                             <label for="indisponivel">Indisponivel</label>
                         </div>
-                        <div class="form-group" >
-                            <textarea name="descricao" id="descricao" placeholder="Informações imovel" ></textarea>
+                        <div class="form-group">
+                            <textarea name="descricao" id="descricao" placeholder="Informações imovel"></textarea>
                         </div>
-                        
+
                         <input type="submit" value="Cadastrar Imóvel">
                     </form>
-      </div>
-  </div>
+                </div>
+            </div>
 
             <!-- Formulário de Pessoa Jurídica -->
-  <div class="tab-pane fade" id="pessoaJuridica" role="tabpanel" aria-labelledby="pessoaJuridica-tab">
-            <div class="shadow-box">
-                        <h4>Cadastro de Corretor</h4>
-                <form id="pessoa_juridica" action="ADM_CRUD/inserir_corretor.php" method="POST" enctype="multipart/form-data">
+            <div class="tab-pane fade" id="pessoaJuridica" role="tabpanel" aria-labelledby="pessoaJuridica-tab">
+                <div class="shadow-box">
+                    <h4>Cadastro de Corretor</h4>
+                    <form id="pessoa_juridica" action="ADM_CRUD/inserir_corretor.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="foto_corretor">Foto do Corretor</label>
                             <input type="file" id="foto_corretor" name="foto_corretor" accept="image/*" class="form-control" required>
@@ -185,41 +192,41 @@
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Adicionar Corretor</button>
                     </form>
-      </div>
-  </div>
-</div>
-</div>
-  <?php include 'ADM_CRUD/mostrar.php' ?>
-  
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php include 'ADM_CRUD/mostrar.php' ?>
 
 
 
 
- <script>
-    function validarInput(input) {
+
+    <script>
+        function validarInput(input) {
             // Remove caracteres que não são permitidos
             input.value = input.value.replace(/[^\d()\s-]/g, '');
         }
-$(document).ready(function() {
-  // Quando um botão de alternância é clicado
-  $(".nav-link").click(function() {
-    // Obtém o tipo de usuário a partir do atributo data-tipo
-    var tipoUsuario = $(this).data("tipo");
-    // Define o valor do input hidden com o tipo de usuário
-    $("#tipoUsuario").val(tipoUsuario);
-  });
+        $(document).ready(function() {
+            // Quando um botão de alternância é clicado
+            $(".nav-link").click(function() {
+                // Obtém o tipo de usuário a partir do atributo data-tipo
+                var tipoUsuario = $(this).data("tipo");
+                // Define o valor do input hidden com o tipo de usuário
+                $("#tipoUsuario").val(tipoUsuario);
+            });
 
-  // Quando o formulário é enviado
-  $("#formPessoaFisica").submit(function(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
-    var formData = $(this).serialize(); // Obtém os dados do formulário
+            // Quando o formulário é enviado
+            $("#formPessoaFisica").submit(function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                var formData = $(this).serialize(); // Obtém os dados do formulário
 
- 
-  });
-});
 
-// script para esconder o formulario de cadastro(evitar poulição visual)
-document.getElementById('esconder_formularios').addEventListener('click', function() {
+            });
+        });
+
+        // script para esconder o formulario de cadastro(evitar poulição visual)
+        document.getElementById('esconder_formularios').addEventListener('click', function() {
             var div = document.getElementById('formularios_cadastro');
             if (div.style.display === 'none' || div.style.display === '') {
                 div.style.display = 'block';
@@ -229,12 +236,7 @@ document.getElementById('esconder_formularios').addEventListener('click', functi
                 this.textContent = 'Formularios de cadastro';
             }
         });
-</script>
-
-
-
-
-  
+    </script>
 
 
 
@@ -242,41 +244,47 @@ document.getElementById('esconder_formularios').addEventListener('click', functi
 
 
 
-    
 
-    
-   <?php include 'conteudo/footer.php' ?>
-   <script>
-       // inicio do link para abrir tela
-$(document).ready(function(){
-    $('.color_button').on('click', function(event) {
-        $('#profileFrame').toggleClass('show');
-        $(this).toggleClass('active');
-        if ($('#profileFrame').hasClass('show')) {
-            // Carrega o conteúdo do perfil via Ajax
-            $('#profileFrame').load('../menu.php');
-            // Altera o ícone para baixo quando o perfil é ativado
-            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_down</i>');
-        } else {
-            // Reverte o ícone para esquerda quando o perfil é desativado
-            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
-        }
-        // Impede que o clique seja propagado para o documento
-        event.stopPropagation();  
-    });
 
-    $(document).on('click', function(event) {
-        if (!$(event.target).closest('.color_button').length && !$(event.target).closest('#profileFrame').length) {
-            $('#profileFrame').removeClass('show');
-            $('.color_button').removeClass('active');
-            // Reverte o ícone para esquerda quando o perfil é desativado
-            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
-        }
-    });
-});
-   </script>
+
+
+
+
+
+
+    <?php include 'conteudo/footer.php' ?>
+    <script>
+        // inicio do link para abrir tela
+        $(document).ready(function() {
+            $('.color_button').on('click', function(event) {
+                $('#profileFrame').toggleClass('show');
+                $(this).toggleClass('active');
+                if ($('#profileFrame').hasClass('show')) {
+                    // Carrega o conteúdo do perfil via Ajax
+                    $('#profileFrame').load('../menu.php');
+                    // Altera o ícone para baixo quando o perfil é ativado
+                    $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_down</i>');
+                } else {
+                    // Reverte o ícone para esquerda quando o perfil é desativado
+                    $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
+                }
+                // Impede que o clique seja propagado para o documento
+                event.stopPropagation();
+            });
+
+            $(document).on('click', function(event) {
+                if (!$(event.target).closest('.color_button').length && !$(event.target).closest('#profileFrame').length) {
+                    $('#profileFrame').removeClass('show');
+                    $('.color_button').removeClass('active');
+                    // Reverte o ícone para esquerda quando o perfil é desativado
+                    $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
+                }
+            });
+        });
+    </script>
     <script src="JS/ADM_page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

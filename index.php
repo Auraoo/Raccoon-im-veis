@@ -41,7 +41,6 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
             overflow: auto;
             background-color: rgb(0,0,0);
             background-color: rgba(0,0,0,0.4);
-
             align-content: center;
         }
         .modal-content {
@@ -63,10 +62,8 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
             cursor: pointer;
         }
 
-
-
 /* style do swiper  */
-        swiper-container {
+    swiper-container {
       width: 100%;
       height: 100%;
     }

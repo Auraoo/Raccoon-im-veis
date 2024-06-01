@@ -53,7 +53,7 @@ require 'consulta_info.php'
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-            <form action="alterar.php" method="post">
+            <form action="ADM_CRUD/alterar.php" method="post">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">ALteração de Dados</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -116,7 +116,7 @@ require 'consulta_info.php'
         </div>
         
                     
-                    <form action="excluir.php" method="post" style="display:inline;">
+                    <form action="ADM_CRUD/excluir.php" method="post" style="display:inline;">
                         <input type="hidden" name="imovel_id" value="<?php echo $imovel['id']; ?>">
                         <button type="submit" class="btn btn-danger" ><i class="fas fa-trash"></i></button>
                     </form>

@@ -35,7 +35,6 @@
             }
         }
     </style>
-    <img src="" alt="">
     <header class="dark-header">
         <nav class="navbar navbar-expand-lg .dark">
             <div id="logoteste" class="align-content-center ">
