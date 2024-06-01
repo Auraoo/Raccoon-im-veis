@@ -164,8 +164,9 @@
         <p class="p-3 bg_biografia"><?php echo $imovel['biografia_emp']; ?></p>
       </div>
       <div class="corretora_info">
-        <span class="mx-2 ">Corretora</span>
-        <div class="container">
+        
+        <div class="container p-2">
+          <span class="mx-1 ">Corretora</span>
           <h1><?php echo $imovel['nome']; ?></h1>
           <p>Endereço corretora:<br> <?php echo $imovel['corretora_endereco']; ?></p>
           <p>telefone corretora:<br> <?php echo $imovel['telefone']; ?></p>
