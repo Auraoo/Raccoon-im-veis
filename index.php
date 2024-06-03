@@ -26,6 +26,8 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- link do css do menu lateral -->
 <link rel="stylesheet" href="CSS/menu_style.css">
+<!-- link da mensagem logar -->
+<link rel="stylesheet" href="CSS/mensagem_logar.css">
 
 
 
@@ -33,37 +35,6 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 <style>
 
 /* caixa de de informação */
-.modal {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-            align-content: center;
-        }
-        .modal-content {
-            background-color: #fefefe;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
 
 /* style do swiper  */
     swiper-container {
@@ -204,8 +175,6 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
-
-    
     <?php require 'conteudo/footer.php' ?>
     <script>
         // fin do link para abrir tela

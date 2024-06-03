@@ -132,7 +132,6 @@ align-content: center;
   & .split-char {
     font-weight: 500;
     transition: font-weight 0.5s ease;
-
     &:hover {
       font-weight: var(--_fw-900);
       color: var(--_clr-900);

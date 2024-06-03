@@ -1,4 +1,10 @@
-<?php include 'User_crud/imovel_mostrar.php' ?>
+<?php include 'User_crud/imovel_mostrar.php';
+$mostrarModal = false;
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+    $mostrarModal = true;
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +14,7 @@
   <link rel="stylesheet" href="CSS/imovel_p.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
   <link rel="stylesheet" href="CSS/menu_style.css">
+  <link rel="stylesheet" href="CSS/mensagem_logar.css">
 </head>
 <body id="dark">
   <?php
@@ -21,6 +28,7 @@
   } else {
     include 'conteudo/header.php';
   }
+  include 'mensagemlogar/informacao_mensagem.php';
   ?>
       <div id="profileFrame" class="frame" >
         <!-- Aqui será carregado o conteúdo via Ajax -->
@@ -37,13 +45,13 @@
           <p class="mb-0">R$<?php echo $imovel['preco']; ?>,00</p>
         </div>
         <div class="d-flex mb-4 mt-2">
-          <button type="button" id="btncolor" class="btn btn-lg px-4 mr-2">
+          <button type="button"  onclick="checkLogin()" id="btncolor" class="btn btn-lg px-4 mr-2">
             <a href="#" style="text-decoration: none;">
               <span class="spanbtn">Negociar</span>
               <div class="overlay"></div>
             </a>
           </button>
-          <button type="button" id="btncolor" class="btn btn-lg px-4 mr-2">
+          <button type="button"  onclick="checkLogin()" id="btncolor" class="btn btn-lg px-4 mr-2">
             <a href="#" style="text-decoration: none;">
               <span class="spanbtn">Financiamento</span>
               <div class="overlay"></div>

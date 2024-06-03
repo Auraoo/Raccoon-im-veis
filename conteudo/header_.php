@@ -11,7 +11,7 @@
 <header class="dark-header text-center" >
     <nav class="navbar navbar-expand-lg  .dark">
       <div >
-      <div id="logoteste">
+      <div id="logoteste" onclick="location.href='index.php';">
         <img src="assets/guaxinim2.png" id="logoguaxinim" width="50px" alt="Minha Imagem">
         <img src="assets/logoverbal.png " id="" class="mr-3" width="150px" alt="Minha Imagem">       
         </div>

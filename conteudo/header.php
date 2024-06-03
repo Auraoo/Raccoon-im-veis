@@ -11,7 +11,7 @@
 
 <header class="dark-header text-center">
   <nav class="navbar navbar-expand-lg justify-content-center .dark">
-    <div id="logoteste" class="align-content-center ">
+    <div id="logoteste" class="align-content-center "onclick="location.href='index.php';">
       <img src="assets/guaxinim2.png" id="logoguaxinim" alt="Minha Imagem">
       <img src="assets/logoverbal.png " id="logoguaxinim2" alt="Minha Imagem">
     </div>
