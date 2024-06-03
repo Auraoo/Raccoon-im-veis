@@ -25,34 +25,35 @@ body {
 .text-responsive{
   font-size: 13px !important;
 }
+/*MODIFICAR SWIPER TODO CONTEUDO VISUAL, PARTE ESTRUTURAL ESTA NO INDEX*/
 .text-responsive
 .corretor_background_container{
-  background-color: green;
+  background-color:  #666666;
   
 }
 .corretor_background_div{
-  background-color: #c5c20e;
+  background-color:  #FFFFFF;
 }
 .corretor_background_info{
-  background-color: #138cc4;
+  background-color: #F0F0F0;
 }
 .corretor_nome{
-  color: rebeccapurple;
+  color:  #333333;
 }
 .corretor_telefone{
-  color: #c5c20e;
+  color: #2E2E2E;
 }
 .corretor_email{
   font-size:10px;
   margin: 0;
-  color: #994e0d;
+  color: #2E2E2E;
 }
 .corretor_biografia{
   padding: 5px;
   border-radius: 10px;
   background-color: white;
   font-size: 15px;
-  color:rgb(51, 255, 0) !important;
+  color:#4F4F4F !important;
 }
       
 #logoteste{
