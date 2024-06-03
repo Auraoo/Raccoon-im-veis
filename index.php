@@ -77,7 +77,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 10px;
+      ;
     }
 
     swiper-slide img {
@@ -87,6 +87,8 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
       object-fit: cover;
       border-radius: 7px;
     }
+
+    
     </style>
 <body id="dark">
   
@@ -128,12 +130,13 @@ if(isset($_SESSION['cargo_de_usuario'])) {
 
     <!--SECTION CONTEUDO-->
     <!--swiper-->
-    <hr>
-    
+<hr>
+<!--SWIPER IMOVEIS-->  
+
 
  
     <!--section localizacao e sobre nos-->
-
+<hr>
 
 
 
