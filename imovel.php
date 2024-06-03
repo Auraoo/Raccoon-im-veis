@@ -7,8 +7,9 @@
   <link rel="shortcut icon" href="assets/guaxinim-sem-fundo.ico" type="image/x-icon">
   <link rel="stylesheet" href="CSS/imovel_p.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+  <link rel="stylesheet" href="CSS/menu_style.css">
 </head>
-<body>
+<body id="dark">
   <?php
   // adicionando o header dependendo do tipo de usuário
   if (isset($_SESSION['cargo_de_usuario'])) {
@@ -21,9 +22,12 @@
     include 'conteudo/header.php';
   }
   ?>
+      <div id="profileFrame" class="frame" >
+        <!-- Aqui será carregado o conteúdo via Ajax -->
+    </div>
   <div class="container">
-    <div class="info_foto pt-3">
-      <div class="sexo">
+    <div class="info_foto">
+      <div class="info_site_nome">
         <h2 class="font_seria mt-2"><?php echo $imovel['titulo']; ?></h2>
         <p class="mb-0 mt-4">Cidade: <?php echo $imovel['cidade']; ?></p>
         <p class="mb-0">bairro: <?php echo $imovel['bairro']; ?></p>
@@ -185,5 +189,5 @@
   </div>
   <?php require "conteudo/footer.php"; ?>
 </body>
-
+<script src="JS/menu_script.js"></script>
 </html>

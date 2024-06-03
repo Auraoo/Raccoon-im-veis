@@ -24,6 +24,9 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <!-- link para abrir tela via ajax -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- link do css do menu lateral -->
+<link rel="stylesheet" href="CSS/menu_style.css">
+
 
 
 </head>
@@ -82,38 +85,6 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
       height: 100%;
       object-fit: cover;
     }
-    /* tela que abre do lado estilo menu */
-         
-        #profileFrame {
-            position: fixed;
-            top: 93px;
-            right: -240px;
-            height: calc(90% - 56px);
-            width: 250px;
-            background-color:  rgb(45, 109, 109);
-            color: white;
-            padding: 0px 5px;
-            z-index: 5;
-            transition: right 0.3s;
-        }
-        @media screen and (max-width: 991px) {
-            #profileFrame{
-              height: calc(70% - 56px);
-
-            }
-           
-        }
-        #profileFrame.show {
-            right: 0;
-        }
-        .frame {
-    display: none;
-}
-
-.frame.show {
-    display: block;
-}
-        
     </style>
 <body id="dark">
   
@@ -188,39 +159,9 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 
-    <script src="JS/main.js"></script>
     
     <?php require 'conteudo/footer.php' ?>
     <script>
-        // inicio do link para abrir tela
-$(document).ready(function(){
-    $('.color_button').on('click', function(event) {
-        $('#profileFrame').toggleClass('show');
-        $(this).toggleClass('active');
-        if ($('#profileFrame').hasClass('show')) {
-            // Carrega o conteúdo do perfil via Ajax
-            $('#profileFrame').load('menu.php');
-            // Altera o ícone para baixo quando o perfil é ativado
-            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_down</i>');
-        } else {
-            // Reverte o ícone para esquerda quando o perfil é desativado
-            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
-        }
-        // Impede que o clique seja propagado para o documento
-        event.stopPropagation();  
-    });
-
-    $(document).on('click', function(event) {
-        if (!$(event.target).closest('.color_button').length && !$(event.target).closest('#profileFrame').length) {
-            $('#profileFrame').removeClass('show');
-            $('.color_button').removeClass('active');
-            // Reverte o ícone para esquerda quando o perfil é desativado
-            $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
-        }
-    });
-});
-
-
         // fin do link para abrir tela
        // animação da logo não verbal 
     var logo = document.getElementById("logoguaxinim");
@@ -237,6 +178,6 @@ $(document).ready(function(){
         this.src = imagemPadrao;
     });
     </script>
-    
+    <script src="JS/menu_script.js"></script>
 </body>
 </html>

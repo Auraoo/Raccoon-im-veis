@@ -1,0 +1,64 @@
+#logoteste {
+    height: 60px;
+}
+
+#logoguaxinim {
+    width: 40px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+#logoguaxinim2 {
+    margin-right: 20px !important;
+}
+
+@media (max-width: 557px) {
+    #logoguaxinim {
+        width: 50px;
+        height: auto;
+    }
+
+    #logoguaxinim2 {
+        width: 110px;
+        margin-right: 0 !important;
+    }
+
+    #diminuirTP {
+        width: 50px;
+    }
+}
+ul li {
+    text-decoration: none;
+    list-style-type: none;
+}
+/* Estilos para o menu lateral */
+#profileFrame {
+    position: fixed;
+    top: 76px;
+    right: -240px;
+    height: calc(100% - 56px);
+    width: 255px;
+    background-color:#EAE0D5;
+    color:black;
+    padding:5px;
+    z-index: 5;
+    transition: right 0.3s;
+}
+
+@media screen and (max-width: 991px) {
+    #profileFrame {
+        height: calc(70% - 56px);
+    }
+}
+
+#profileFrame.show {
+    right: 0;
+}
+
+.frame {
+    display: none;
+}
+
+.frame.show {
+    display: block;
+}
