@@ -23,7 +23,7 @@ body {
   color: black !important; /* Cor do texto escura */
 }
 .text-responsive{
-  font-size: 13px !important;
+  font-size: 18px !important;
 }
 /*MODIFICAR SWIPER TODO CONTEUDO VISUAL, PARTE ESTRUTURAL ESTA NO INDEX*/
 .text-responsive
@@ -363,5 +363,6 @@ video {
       font-size: calc(14px + 2vmin); /* Tamanho de fonte um pouco menor para dispositivos pequenos */
   }
 }
+
 
 

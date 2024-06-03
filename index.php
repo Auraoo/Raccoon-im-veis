@@ -77,7 +77,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 10px;
+      ;
     }
 
     swiper-slide img {
@@ -87,6 +87,8 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
       object-fit: cover;
       border-radius: 7px;
     }
+
+    
     </style>
 <body id="dark">
   
@@ -113,7 +115,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
   <div class="video-background">
     <div class="video-foreground">
       <video loop muted autoplay>
-        <source src="./assets/test mesa.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/7578552/7578552-hd_1280_720_30fps.mp4" type="video/mp4">
         Seu navegador não suporta vídeos em HTML5.
       </video>
     </div>
@@ -127,18 +129,50 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     </div>
 
     <!--SECTION CONTEUDO-->
-    <!--swiper-->
-    <hr>
     
+<hr>
+<!--SWIPER IMOVEIS-->  
+  
+<hr>
 
- 
-    <!--section localizacao e sobre nos-->
-
-
-
-
+<!--section localizacao e sobre nos-->
+<!--CONTEUDO SOBRE LOCALIZACAO E SOBRE NOS-->
+<div class="container-fluid">
+  <div class="row">
+  <div class="col embed-responsive embed-responsive-16by9" >
+    <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.639068759222!2d-44.99379412602629!3d-12.136829543581936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75f8aac46ce85d3%3A0xd04192f3e2a1ae21!2sR.%20Padre%20Vieira%20-%20Vila%20Brasil%2C%20Barreiras%20-%20BA%2C%2047800-292!5e0!3m2!1spt-BR!2sbr!4v1717433671572!5m2!1spt-BR!2sbr" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
-    
+  </div>
+  <div class="col text-float" style="background-color: #F0F0F0;">
+    <h2>Sobre Nós!</h2>
+    <p>Raccoon Imóveis é uma empresa inovadora no setor imobiliário, dedicada a oferecer experiências excepcionais na compra, venda e locação de imóveis. Nossa missão é transformar o mercado imobiliário com soluções personalizadas, buscando sempre a satisfação e confiança dos nossos clientes.</p>
+    <p>Visão: Ser a principal referência no setor, destacando-se pela inovação, excelência no atendimento e compromisso com a qualidade.</p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <ul>
+          <h3>Valores:</h3>
+          <li>Transparência</li>
+          <li>Excelência</li>
+          <li>Inovação</li>
+          <li>Satisfação do Cliente</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul>
+          <h3>Serviços:</h3>
+          <li>Compra e venda de imóveis</li>
+          <li>Locação de imóveis</li>
+          <li>Avaliação e consultoria imobiliária</li>
+          <li>Gestão de propriedades</li>
+        </ul>
+      </div>
+    </div>
+    <p>Na Raccoon Imóveis, cada cliente é único e cada imóvel é uma nova oportunidade de realizar sonhos. Venha nos conhecer e descubra como podemos transformar sua experiência imobiliária!</p>
+  </div> 
+<!--FIM sobrenos-->
+
+
     <main>
           <hr>
           <div class="container col-xxl-8 px-4 py-5">
@@ -162,8 +196,8 @@ if(isset($_SESSION['cargo_de_usuario'])) {
 
 
         
-    <section class="mb-4" id="corretores">
-        <h4>conheça nossos corretores!</h4>
+    <section class="mb-4 zoom-effect" id="corretores">
+        <h4>Conheça nossos corretores!</h4>
             <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
                 <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
             </swiper-container>
