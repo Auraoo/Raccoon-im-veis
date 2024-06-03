@@ -28,11 +28,14 @@
     }
 }
 .menu_lateral_ul{
-    padding-left: 5px;
+    padding-left: 0px;
 }
 ul li {
     text-decoration: none;
     list-style-type: none;
+}
+.tamanho_linha{
+    font-size: 20px;
 }
 /* Estilos para o menu lateral */
 #profileFrame {
@@ -43,14 +46,13 @@ ul li {
     width: 255px;
     background-color:#EAE0D5;
     color:black;
-    padding:5px;
     z-index: 5;
     transition: right 0.3s;
 }
 
 @media screen and (max-width: 991px) {
     #profileFrame {
-        height: calc(70% - 56px);
+        height: calc(100% - 56px);
     }
 }
 
