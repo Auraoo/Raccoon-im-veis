@@ -18,6 +18,8 @@
 
     <link rel="stylesheet" href="CSS/ADM_page.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/menu_style.css">
+
 
 </head>
 
@@ -33,39 +35,6 @@
 
         #esconder_formularios {
             margin-top: 80px;
-        }
-
-        #profileFrame {
-            position: fixed;
-            top: 93px;
-            right: -240px;
-            height: calc(90% - 56px);
-            width: 250px;
-            background-color: rgb(45, 109, 109);
-            color: white;
-            padding: 0px 5px;
-            z-index: 5;
-            transition: right 0.3s;
-        }
-
-        @media screen and (max-width: 991px) {
-            #profileFrame {
-                height: calc(70% - 56px);
-
-            }
-
-        }
-
-        #profileFrame.show {
-            right: 0;
-        }
-
-        .frame {
-            display: none;
-        }
-
-        .frame.show {
-            display: block;
         }
     </style>
     <div id="profileFrame" class="frame">

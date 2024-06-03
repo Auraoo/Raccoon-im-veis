@@ -27,6 +27,9 @@
         width: 50px;
     }
 }
+.menu_lateral_ul{
+    padding-left: 5px;
+}
 ul li {
     text-decoration: none;
     list-style-type: none;
@@ -61,4 +64,14 @@ ul li {
 
 .frame.show {
     display: block;
+}
+.link_navegação{
+    padding: 0px 10px 10px 10px;
+}
+.link_adm:hover , .link_adm{
+    text-decoration: none;
+    color: black;
+}
+.link_navegação:hover{
+    background-color: #C6AC8F;
 }
