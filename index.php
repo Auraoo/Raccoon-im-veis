@@ -68,7 +68,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 /* style do swiper  */
     swiper-container {
       width: 100%;
-      height: 100%;
+      height: 100%;      
     }
 
     swiper-slide {
@@ -77,6 +77,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: 10px;
     }
 
     swiper-slide img {
@@ -84,6 +85,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 7px;
     }
     </style>
 <body id="dark">
@@ -111,7 +113,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
   <div class="video-background">
     <div class="video-foreground">
       <video loop muted autoplay>
-        <source src="./assets/test mesa.mp" type="video/mp4">
+        <source src="./assets/test mesa.mp4" type="video/mp4">
         Seu navegador não suporta vídeos em HTML5.
       </video>
     </div>
@@ -125,10 +127,20 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     </div>
 
     <!--SECTION CONTEUDO-->
+    <!--swiper-->
+    <hr>
+    
+
+ 
+    <!--section localizacao e sobre nos-->
+
+
+
+
+    
+    
     <main>
-                
-          <div class="b-example-divider" style ></div>
-          
+          <hr>
           <div class="container col-xxl-8 px-4 py-5">
               <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6 zoom-effect">
