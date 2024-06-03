@@ -1,45 +1,40 @@
 <?php
 session_start();
 ?>
-<h2>Opções de Perfil</h2>
-<link rel="stylesheet" href="../CSS/style.css">
-<link rel="stylesheet" href="../CSS/botãoseleçãostyle.css">
 <link rel="stylesheet" href="CSS/style.css">
 <link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
+<link rel="stylesheet" href="CSS/menu_style.css">
 
 <div class="align-content-center mb-auto">
-    <div class="nav-item dropdown">
-        <a class="  dropdown-toggle px-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?php echo $_SESSION['usernome']; ?>
-        </a>
-        <ul class="dropdown-menu">
-            <li class="dropdown-item">alguma coisa</li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li>
-                <hr class="dropdown-divider">
-            </li>
-        </ul>
-    </div>
     <div class="" id="">
-        <ul class=" ">
-            <li class="">
-                <a href="#funcinarios">Colaboradores</a>
+        <ul class="menu_lateral_ul ">
+            <li class="link_navegação" onclick="location.href='index.php';">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
             </li>
-            <li class="nav-item">
-                <a href="#empresa">Para empresa!</a>
+            <li class="link_navegação" onclick="location.href='index.php#corretores';">
+                <i class="fas fa-user-tie"></i>
+                <span>Corretores</span>
             </li>
-            <li class="nav-item">
-                <a href="#voce">Para você!</a>
+            <li class="link_navegação" onclick="location.href='index.php#localizacao';">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Localização</span>
+            </li>
+            <li class="link_navegação" onclick="location.href='pesquisa_imoveis.php';">
+                <i class="fas fa-building"></i>
+                <span>Imoveis</span>
             </li>
             <?php
             if (isset($_SESSION['cargo_de_usuario'])) {
                 // Verificar o tipo de usuário
                 if ($_SESSION['cargo_de_usuario'] == 1) {
                     // Tipo de usuário é 1, mostrar o cabeçalho de um jeito
-                    echo '
-                            <li class="nav-item">
-                                <a  href="adm_page.php">ADM</a>
-                            </li>';  // header para o cargo tipo 1 (adm)
+                    echo '<a class="link_adm" href="adm_page.php">
+                                <li class="link_navegação">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>ADM</span>
+                                </li>
+                          </a>';  // header para o cargo tipo 1 (adm)
                 } else {
                     // se o cargo de usuário fot diferente de 1, mostrar o cabeçalho de outro jeito
                     echo ''; // header para usuarios normais (logados mas sem ser adm)

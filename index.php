@@ -150,7 +150,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
 
 
         
-    <section class="mb-4" >
+    <section class="mb-4" id="corretores">
         <h4>conheça nossos corretores!</h4>
             <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
                 <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
@@ -178,6 +178,8 @@ if(isset($_SESSION['cargo_de_usuario'])) {
         this.src = imagemPadrao;
     });
     </script>
+    <script src="JS/botãoseleção.js"></script>
+    <script src="JS/main.js"></script>
     <script src="JS/menu_script.js"></script>
 </body>
 </html>
