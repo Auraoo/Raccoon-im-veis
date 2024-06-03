@@ -12,17 +12,14 @@ if ($result->num_rows>0) {
        echo '
      <swiper-slide>
      <div class="card" style="width: 18rem;">
-       <img src="'.$rows['imagem_principal'].'" class="card-img-top" alt="..." width="300px" >
+       <img src="'.$rows['imagem_principal'].'" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">'.$rows['titulo'].'</h5>
-         <p class="card-text">'.$rows['preco'].'</p>
+         <p class="card-text">R$'.$rows['preco'].'</p>
        </div>
      </div> 
      
     </swiper-slide>';
     }
 }
-
-
-
 ?>
