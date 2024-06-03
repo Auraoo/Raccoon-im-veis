@@ -102,9 +102,18 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <!--SECTION CONTEUDO-->
     
 <hr>
-<!--SWIPER IMOVEIS-->  
-  
-<hr>
+<!--CARD DOS IMOVEIS-->
+<div class="container-fluid">
+  <h2>Conheça nossos imóveis!</h2>
+  <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="5" space-between="30" free-mode="true">
+      <?php
+      include './User_crud/mostrar_imoveis.php';
+      ?>
+    </swiper-container>
+</div>
+  <!--FIM-->
+
+  <hr>
 
 <!--section localizacao e sobre nos-->
 <!--CONTEUDO SOBRE LOCALIZACAO E SOBRE NOS-->
@@ -118,7 +127,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <h2>Sobre Nós!</h2>
     <p>Raccoon Imóveis é uma empresa inovadora no setor imobiliário, dedicada a oferecer experiências excepcionais na compra, venda e locação de imóveis. Nossa missão é transformar o mercado imobiliário com soluções personalizadas, buscando sempre a satisfação e confiança dos nossos clientes.</p>
     <p>Visão: Ser a principal referência no setor, destacando-se pela inovação, excelência no atendimento e compromisso com a qualidade.</p>
-
+<hr>
     <div class="row">
       <div class="col-md-6">
         <ul>
@@ -139,9 +148,10 @@ if(isset($_SESSION['cargo_de_usuario'])) {
         </ul>
       </div>
     </div>
+    <hr>
     <p>Na Raccoon Imóveis, cada cliente é único e cada imóvel é uma nova oportunidade de realizar sonhos. Venha nos conhecer e descubra como podemos transformar sua experiência imobiliária!</p>
   </div> 
-<!--FIM sobrenos-->
+<!--FIM sobre nos-->
 
 
     <main>
