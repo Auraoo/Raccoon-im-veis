@@ -131,9 +131,19 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <!--SECTION CONTEUDO-->
     
 <hr>
-<!--SWIPER IMOVEIS-->  
-  
-<hr>
+<!--CARD DOS IMOVEIS-->
+<div class="container-fluid">
+  <h2>Conheça nossos imóveis!</h2>
+
+  <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="5" space-between="30" free-mode="true">
+      <?php
+      include './User_crud/mostrar_imoveis.php';
+      ?>
+    </swiper-container>
+</div>
+  <!--FIM-->
+
+  <hr>
 
 <!--section localizacao e sobre nos-->
 <!--CONTEUDO SOBRE LOCALIZACAO E SOBRE NOS-->
@@ -170,7 +180,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     </div>
     <p>Na Raccoon Imóveis, cada cliente é único e cada imóvel é uma nova oportunidade de realizar sonhos. Venha nos conhecer e descubra como podemos transformar sua experiência imobiliária!</p>
   </div> 
-<!--FIM sobrenos-->
+<!--FIM sobre nos-->
 
 
     <main>
