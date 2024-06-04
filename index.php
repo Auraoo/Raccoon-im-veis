@@ -87,7 +87,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <div class="video-foreground">
       <video loop muted autoplay>
         <source src="https://videos.pexels.com/video-files/7578552/7578552-hd_1280_720_30fps.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos em HTML5.
+        
       </video>
     </div>
     <div class="text-over-video">

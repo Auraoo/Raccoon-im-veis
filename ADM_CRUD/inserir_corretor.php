@@ -1,5 +1,5 @@
 <?php
-include 'c:/xampp/htdocs/Raccoon-im-veis/conexao/config.php';
+include '../conexao/config.php';
 
 // Diretório de upload
 $uploadDir = '../Raccoon-im-veis/uploads/';
