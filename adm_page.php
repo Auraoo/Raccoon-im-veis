@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php require 'sessao/check_de_sessao.php';
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 

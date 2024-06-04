@@ -1,12 +1,13 @@
 <!-- check_login.php -->
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
 
-// Check if the user is logged in
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    header('Location: index.php');
-    exit();
-} else {
-    header('Location: ../mensagemlogar/informacao_mensagem.php');
-    exit();
+    // if (!$_SESSION['cargo_de_usuario'] == 1) {
+    //     die("Area Restrita!!
+    // <p><a href='../index.php'>Pagina Inicial</a></p>");
+    // }
+
+    header("Location: ../index.php");
 }
+?>
