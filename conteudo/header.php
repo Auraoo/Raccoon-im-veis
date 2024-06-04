@@ -17,7 +17,7 @@
     </div>
     <div class="search-container">
       <form id="searchForm" class="d-flex" action="pesquisa_imoveis.php" method="GET">
-        <input id="input_pesquisa" class="form-control mx-2" type="text" name="query" placeholder="Pesquisar produtos...">
+        <input id="input_pesquisa" class="form-control mx-2" type="text" name="query" placeholder="Pesquisar produtos..."autocomplete="off">
       </form>
     </div>
     <ul id="acoes_C_L" class="navbar-nav d-flex">

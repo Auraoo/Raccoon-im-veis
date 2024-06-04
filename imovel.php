@@ -41,7 +41,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
         <p class="mb-0">bairro: <?php echo $imovel['bairro']; ?></p>
         <p class="mb-0">Endereço: <?php echo $imovel['endereco_imovel']; ?></p>
         <p class="mb-0">Disponibilidade: <?php echo $imovel['disponibilidade']; ?></p>
-        <div class="preço_imovel mt-4">
+        <div class="preço_imovel mt-4" id="precocolor_temadark" >
           <p class="mb-0">R$<?php echo $imovel['preco']; ?>,00</p>
         </div>
         <div class="d-flex mb-4 mt-2">
@@ -60,32 +60,12 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
         </div>
 
       </div>
-      <div class="imagem_informaçãoprincipal">
+      <div class="imagem_informaçãoprincipal" id="bg_imovel_dark">
         <div class="imagemfundo">
           <!-- colocando style por que o background da div é a imagem que tá no bd -->
           <style>
             .imagemfundo {
-              margin-top: 3px;
               background-image: url("Raccoon-im-veis/<?php echo $imovel['imagem_principal']; ?>");
-              /*imagem que ta no bd e só funciona aqui*/
-              width: 100%;
-              height: 100%;
-              background-size: cover;
-              /* Ajusta o tamanho da imagem para cobrir toda a div */
-              background-position: center;
-              /* Centraliza a imagem */
-              background-repeat: no-repeat;
-              /* Evita a repetição da imagem */
-              display: flex;
-              align-items: end;
-              justify-content: end;
-              text-align: center;
-              border-radius: 50% 50% 0 0;
-            }
-
-            .imagem_container {
-              background-color: #e6e6e6;
-
             }
           </style>
         </div>
@@ -95,7 +75,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 
   </div>
 
-  <div class="imagem_container">
+  <div class="imagem_container" id="bg_imovel_dark2" >
     <div class="container pt-2">
       <div class="gallery">
         <?php
@@ -197,5 +177,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
   </div>
   <?php require "conteudo/footer.php"; ?>
 </body>
-<script src="JS/menu_script.js"></script>
+<script src="JS/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="JS/menu_script.js"></script>
 </html>

@@ -6,7 +6,7 @@
 <!-- < -->
 <?php if ($mostrarModal): ?>
         <div id="loginModal" class="modal_mensagem px-0">
-            <div class="modal-content"  id="dark">
+            <div class="modal-content"   id="mensagemalerta" >
                 <span class="close" onclick="closeModal()">&times;</span>
                     <div class="px-4 py-2 my-2 text-center zoom-effect">
                     <img class="d-block mx-auto rounded-pill imagemborda" src="./assets/pedro-raccoon.gif" alt="Logo" width="100" height="100">

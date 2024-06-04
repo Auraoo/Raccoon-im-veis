@@ -51,6 +51,26 @@ img {
     }
   }
 }
+.imagem_container {
+  background-color: #e6e6e6;
+
+}
+.imagemfundo {
+  margin-top: 3px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  /* Ajusta o tamanho da imagem para cobrir toda a div */
+  background-position: center;
+  /* Centraliza a imagem */
+  background-repeat: no-repeat;
+  /* Evita a repetição da imagem */
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  text-align: center;
+  border-radius: 50% 50% 0 0;
+}
 .imagem_informaçãoprincipal {
       background-color:#e6e6e6;
 
@@ -133,11 +153,11 @@ td {
 }
 
 th {
-  background-color: #f4f4f4;
+  background-color: #f4f4f47d;
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #f4f4f47d;
 }
 .preço_imovel{
   color:green;

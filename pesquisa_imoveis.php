@@ -112,7 +112,7 @@ if ($result->num_rows == 0) {
                                 echo "<p class='endereco_tf'>" . $row['endereco'] . "</p>";
                                 echo "<div class='d-flex'>";
                                 echo "<p class='mr-auto mb-0' >" . $row['tipo'] . "</p>";
-                                echo "<p class='preco'>Preço: R$" . $row['preco'] . "</p>";
+                                echo "<p class='preco' id='precocolor_temadark' >Preço: R$" . $row['preco'] . "</p>";
                                 echo "</div>";
                                 echo "</div>"; // .imovel-info
                                 echo "</div>"; // .imovel-content

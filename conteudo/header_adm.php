@@ -6,40 +6,7 @@
 <link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<style>
-    #logoteste {
-        height: 60px;
-    }
 
-    #logoguaxinim {
-        width: 40px;
-        height: auto;
-        /* Mantém a proporção da imagem automaticamente */
-        transition: width 0.3s ease;
-        /* Adiciona uma transição suave */
-    }
-
-    #logoguaxinim2 {
-        margin-right: 20px !important;
-    }
-
-    @media (max-width: 557px) {
-        #logoguaxinim {
-            width: 50px;
-            height: auto;
-            /* Mantém a proporção da imagem automaticamente */
-        }
-
-        #logoguaxinim2 {
-            width: 110px;
-            margin-right: 0 !important;
-        }
-
-        #diminuirTP {
-            width: 50px;
-        }
-    }
-</style>
 <header class="dark-header">
     <nav class="navbar navbar-expand-lg .dark">
         <div id="logoteste" class="align-content-center " onclick="location.href='index.php';">
@@ -48,7 +15,7 @@
         </div>
         <div class="search-container">
             <form id="searchForm" class="d-flex" action="pesquisa_imoveis.php" method="GET">
-                <input id="input_pesquisa" class="form-control mx-2" type="text" name="query" placeholder="Pesquisar produtos...">
+                <input id="input_pesquisa" class="form-control mx-2" type="text" name="query" placeholder="Pesquisar produtos..."autocomplete="off">
             </form>
         </div>
         <div class="ml-auto">
@@ -64,28 +31,3 @@
         </div>
     </nav>
 </header>
-
-<script src="JS/botãoseleção.js"></script>
-<script src="../JS/botãoseleção.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    // animação da logo não verbal 
-    var logo = document.getElementById("logoguaxinim");
-    var imagemPadrao = "assets/guaxinim2.png";
-    var imagemHover = "assets/guaxinim1.png";
-
-    // Adiciona imagem quando o mouse estiver em cima
-    logo.addEventListener("mouseover", function() {
-        this.src = imagemHover;
-    });
-
-    // Volta para imagem padrão quando o mouse sair de cima
-    logo.addEventListener("mouseout", function() {
-        this.src = imagemPadrao;
-    });
-    document.getElementById('input_pesquisa').addEventListener('input', function() {
-        document.getElementById('searchform').submit();
-    });
-</script>
