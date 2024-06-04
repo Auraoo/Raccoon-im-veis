@@ -11,11 +11,11 @@ if ($result->num_rows>0) {
        $rows['preco'];
        echo '
      <swiper-slide>
-     <div class="card" style="width: 18rem;">
-       <img src="'.$rows['imagem_principal'].'" class="card-img-top" alt="...">
+     <div class="card">
+       <img src="'.$rows['imagem_principal'].'" class="card-img-top" alt="..." ; >
        <div class="card-body">
          <h5 class="card-title">'.$rows['titulo'].'</h5>
-         <p class="card-text">R$'.$rows['preco'].'</p>
+         <p class="card-text">Valor R$'.$rows['preco'].'</p>
        </div>
      </div> 
      
@@ -23,3 +23,4 @@ if ($result->num_rows>0) {
     }
 }
 ?>
+!
