@@ -3,11 +3,11 @@
 if (!isset($_SESSION)) {
     session_start();
 
-    // if (!$_SESSION['cargo_de_usuario'] == 1) {
-    //     die("Area Restrita!!
-    // <p><a href='../index.php'>Pagina Inicial</a></p>");
-    // }
+    if (!$_SESSION['cargo_de_usuario'] == 1) {
+        
+        header("Location: ../index.php");
+    }
 
-    header("Location: ../index.php");
+    
 }
 ?>
