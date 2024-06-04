@@ -35,13 +35,16 @@ body {
 }
 
 .text-responsive {
-  font-size: 18px !important;
+  font-size: 17px !important;
+  display: flex;
+  justify-content: center;
+  text-align: center; 
+  
 }
 
 /*MODIFICAR SWIPER TODO CONTEUDO VISUAL, PARTE ESTRUTURAL ESTA NO INDEX*/
 .text-responsive .corretor_background_container {
   background-color: #666666;
-
 }
 
 #profileIcon {
@@ -57,13 +60,18 @@ body {
   /* Internet Explorer/Edge */
 }
 
+
+
 .corretor_background_div {
   background-color: #FFFFFF;
+ 
 }
 
 .corretor_background_info {
   background-color: #F0F0F0;
+  height: 190px;
 }
+
 
 .corretor_nome {
   color: #333333;
@@ -431,4 +439,19 @@ video {
     font-size: calc(14px + 2vmin);
     /* Tamanho de fonte um pouco menor para dispositivos pequenos */
   }
+}
+
+/*DIV DO SWIPER SLIDE FORMA*/
+
+.card{
+  height: 360px;
+  object-fit: cover;
+}
+
+
+.card img{
+  width: 238px;
+  height: 198px;
+  cursor: pointer
+  
 }

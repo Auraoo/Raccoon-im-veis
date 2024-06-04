@@ -17,24 +17,31 @@ if ($result->num_rows > 0) {
         $row['telefone_emp'];
         $row['biografia_emp'];
         $row['corretora_nome'];
-         echo ' 
+         
+        echo ' 
         <swiper-slide>
         <div class="container p-2">
         <div class="row info-container  corretor_background_div">
-            <div class="col-md-4">
-                <img src="Raccon-im-veis/'.$row['foto_corretor'].'" alt="Imagem Exemplo">
+             
+            <div class="col-md-4" >
+                <img src="Raccon-im-veis/'.$row['foto_corretor'].'" alt="Imagem Exemplo"  style="height: 190px">
             </div>
             <div class="col-md-8 info corretor_background_info">
+
                 <h4 class="corretor_nome">'.$row['nome_emp'].'</h4>
                 <p class="corretor_email text-responsive">Email: '.$row['email_emp'].'</p>
-                <div class="d-flex">
-                <p class="corretor_email text-responsive">Corretora: '.$row['corretora_nome'].'</p>
-                <p class="corretor_telefone text-responsive">'.$row['telefone_emp'].'</p>
+                
+                <div>
+                <p class="corretor_email text-responsive"> Corretora: '.$row['corretora_nome'].'</p>
+
+                <p class="corretor_telefone text-responsive">  Telefone:'.$row['telefone_emp'].'</p>
                 </div>
+
                 <p class="corretor_biografia">'.$row['biografia_emp'].'</p>
             </div>
         </div>
     </div>
+
     </swiper-slide>';
     }
 } else {

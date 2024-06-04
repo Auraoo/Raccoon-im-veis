@@ -87,7 +87,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <div class="video-foreground">
       <video loop muted autoplay>
         <source src="https://videos.pexels.com/video-files/7578552/7578552-hd_1280_720_30fps.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos em HTML5.
+        
       </video>
     </div>
     <div class="text-over-video">
@@ -178,7 +178,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
 
         
     <section class="mb-4 zoom-effect" id="corretores">
-        <h4>Conheça nossos corretores!</h4>
+    <h4>Conheça nossos corretores!</h4>
             <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
                 <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
             </swiper-container>
