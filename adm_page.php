@@ -210,7 +210,7 @@
 
                                             <!-- disponibilidade do imovel -->
                                             <div class="form-group">
-                                                <h5>Disponibilidade</h5>
+  b                                              <h5>Disponibilidade</h5>
 
                                                 <input type="radio" name="disponibilidade" id="disponivel" value="Disponivel">
                                                 <label for="disponivel">Disponivel</label>
