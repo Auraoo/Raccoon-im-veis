@@ -112,7 +112,6 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     </swiper-container>
 </div>
   <!--FIM-->
-
   <hr>
 
 <!--section localizacao e sobre nos-->

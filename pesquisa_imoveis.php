@@ -211,6 +211,7 @@ if ($result->num_rows == 0) {
     <script src="JS/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="JS/menu_script.js"></script>
+    <script src="JS/botãoseleção.js"></script>
 </body>
 
 </html>
