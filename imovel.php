@@ -60,7 +60,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
         </div>
 
       </div>
-      <div class="imagem_informaçãoprincipal" id="bg_imovel_dark">
+      <div class="imagem_informaçãoprincipal fundo_background_dark" id="bg_imovel_dark">
         <div class="imagemfundo">
           <!-- colocando style por que o background da div é a imagem que tá no bd -->
           <style>
@@ -75,7 +75,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 
   </div>
 
-  <div class="imagem_container" id="bg_imovel_dark2" >
+  <div class="imagem_container fundo_background_dark" id="bg_imovel_dark2" >
     <div class="container pt-2">
       <div class="gallery">
         <?php

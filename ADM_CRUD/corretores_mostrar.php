@@ -21,20 +21,20 @@ if ($result->num_rows > 0) {
         echo ' 
         <swiper-slide>
         <div class="container p-2">
-        <div class="row info-container  corretor_background_div">
+        <div class="row info-container fundo_background_dark corretor_background_div">
              
             <div class="col-md-4" >
                 <img src="Raccon-im-veis/'.$row['foto_corretor'].'" alt="Imagem Exemplo"  style="height: 190px">
             </div>
-            <div class="col-md-8 info corretor_background_info">
+            <div class="col-md-8 info fundo_background_dark corretor_background_info">
 
-                <h4 class="corretor_nome">'.$row['nome_emp'].'</h4>
-                <p class="corretor_email text-responsive">Email: '.$row['email_emp'].'</p>
+                <h4 class="corretor_nome letras_color_dark">'.$row['nome_emp'].'</h4>
+                <p class="corretor_email text-responsive letras_color_dark ">Email: '.$row['email_emp'].'</p>
                 
                 <div>
-                <p class="corretor_email text-responsive"> Corretora: '.$row['corretora_nome'].'</p>
+                <p class="corretor_email text-responsive letras_color_dark "> Corretora: '.$row['corretora_nome'].'</p>
 
-                <p class="corretor_telefone text-responsive">  Telefone:'.$row['telefone_emp'].'</p>
+                <p class="corretor_telefone text-responsive letras_color_dark ">  Telefone:'.$row['telefone_emp'].'</p>
                 </div>
 
                 <p class="corretor_biografia">'.$row['biografia_emp'].'</p>

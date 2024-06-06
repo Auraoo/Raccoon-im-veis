@@ -37,11 +37,10 @@ function splitTextIntoSpans(target) {
 splitTextIntoSpans('.animacaotext')
 // seleção de tema para o site modo claro e modo escuro
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const themeCheckbox = document.getElementById('themeCheckbox');
     const container = document.getElementById('dark');
-    const bgImovelDark = document.getElementById('bg_imovel_dark');
-    const bgImovelDark2 = document.getElementById('bg_imovel_dark2');
 
     // Carrega o tema do banco de dados
     function loadThemeFromDatabase() {
@@ -83,11 +82,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (theme === 'dark') {
             container.classList.remove('light');
             container.classList.add('dark');
+            applyAdditionalDarkThemeStyles();
             // bgImovelDark.style.backgroundColor = '#080e10';
             // bgImovelDark2.style.backgroundColor = '#080e10';
         } else {
             container.classList.remove('dark');
             container.classList.add('light');
+            removeAdditionalDarkThemeStyles();
             // bgImovelDark.style.backgroundColor = '#e6e6e6';
             // bgImovelDark2.style.backgroundColor = '#e6e6e6';
         }
@@ -104,6 +105,54 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
         xhr.send("theme=" + theme);
+    }
+
+    // Aplica estilos adicionais para o tema dark
+    function applyAdditionalDarkThemeStyles() {
+        const botaotemaElements = document.querySelectorAll('.botaotema');
+        const backgroundDarkElements = document.querySelectorAll('.fundo_background_dark');
+        const menuDarkElements = document.querySelectorAll('.menu_dark');
+        const letrasDarkElements = document.querySelectorAll('.letras_color_dark');
+
+        botaotemaElements.forEach(element => {
+            element.style.color = '#ffffff'; // Exemplo de estilo para botaotema
+        });
+
+        backgroundDarkElements.forEach(element => {
+            element.style.backgroundColor = '#080e10'; // Exemplo de estilo para background_dark
+        });
+
+        letrasDarkElements.forEach(element => {
+            element.style.color = '#FFFFFF'; // Exemplo de estilo para menu_dark
+        });
+
+        menuDarkElements.forEach(element => {
+            element.style.backgroundColor = '#222222'; // Exemplo de estilo para menu_dark
+        });
+    }
+
+    // Remove estilos adicionais para o tema light
+    function removeAdditionalDarkThemeStyles() {
+        const botaotemaElements = document.querySelectorAll('.botaotema');
+        const backgroundDarkElements = document.querySelectorAll('.fundo_background_dark');
+        const menuDarkElements = document.querySelectorAll('.menu_dark');
+        const letrasDarkElements = document.querySelectorAll('.letras_color_dark');
+
+        botaotemaElements.forEach(element => {
+            element.style.color = ''; // Remove estilo
+        });
+
+        backgroundDarkElements.forEach(element => {
+            element.style.backgroundColor = ''; // Remove estilo
+        });
+
+        letrasDarkElements.forEach(element => {
+            element.style.color = ''; // remove as lettras brancas
+        });
+
+        menuDarkElements.forEach(element => {
+            element.style.backgroundColor = ''; // Remove estilo
+        });
     }
 
     // Carrega o tema do banco de dados quando a página é carregada
