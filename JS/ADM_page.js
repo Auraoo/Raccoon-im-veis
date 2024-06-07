@@ -8,13 +8,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     start = parseInt(start);
 
     const paginate = (pageNumber) => {
-        const startItem = (pageNumber - 1) * itemsOnPage;
-        const endItem = startItem + itemsOnPage;
-        
-        Array.from(teamMemberRows).forEach((row, index) => {
-            row.style.display = (index >= startItem && index < endItem) ? 'table-row' : 'none';
-        });
-    };
+    const startItem = (pageNumber - 1) * itemsOnPage;
+    const endItem = startItem + itemsOnPage;
+    
+    Array.from(teamMemberRows).forEach((row, index) => {
+        if (index >= startItem && index < endItem) {
+            row.style.display = 'table-row';
+            row.classList.add('sub-dark');  // Adiciona a classe 'sub_dark'
+        } else {
+            row.style.display = 'none';
+            row.classList.remove('sub-dark');  // Remove a classe 'sub_dark' para as linhas não exibidas
+        }
+    });
+};
 
     paginate(start);
 

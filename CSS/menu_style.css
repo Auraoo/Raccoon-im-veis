@@ -44,7 +44,7 @@ ul li {
     right: -240px;
     height: calc(100% - 56px);
     width: 255px;
-    background-color:#EAE0D5;
+    background-color:#837767;
     color:black;
     z-index: 5;
     transition: right 0.3s;

@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const botaotemaElements = document.querySelectorAll('.botaotema');
         const backgroundDarkElements = document.querySelectorAll('.fundo_background_dark');
         const menuDarkElements = document.querySelectorAll('.menu_dark');
+        const subdarkElements = document.querySelectorAll('.sub-dark');
         const letrasDarkElements = document.querySelectorAll('.letras_color_dark');
 
         botaotemaElements.forEach(element => {
@@ -119,9 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         backgroundDarkElements.forEach(element => {
-            element.style.backgroundColor = '#080e10'; // Exemplo de estilo para background_dark
+            element.classList.add('background-dark');
         });
-
+        subdarkElements.forEach(element => {
+            element.classList.add('sub_dark');
+        });
         letrasDarkElements.forEach(element => {
             element.style.color = '#FFFFFF'; // Exemplo de estilo para menu_dark
         });
@@ -135,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function removeAdditionalDarkThemeStyles() {
         const botaotemaElements = document.querySelectorAll('.botaotema');
         const backgroundDarkElements = document.querySelectorAll('.fundo_background_dark');
+        const subdarkElements = document.querySelectorAll('.sub-dark');
         const menuDarkElements = document.querySelectorAll('.menu_dark');
         const letrasDarkElements = document.querySelectorAll('.letras_color_dark');
 
@@ -143,7 +147,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         backgroundDarkElements.forEach(element => {
-            element.style.backgroundColor = ''; // Remove estilo
+            element.classList.remove('background-dark');
+        });
+        subdarkElements.forEach(element => {
+            element.classList.remove('sub_dark');
         });
 
         letrasDarkElements.forEach(element => {

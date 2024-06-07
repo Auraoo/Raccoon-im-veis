@@ -15,6 +15,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
   <link rel="stylesheet" href="CSS/menu_style.css">
   <link rel="stylesheet" href="CSS/mensagem_logar.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body id="dark">
   <?php
@@ -30,7 +31,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
   }
   include 'mensagemlogar/informacao_mensagem.php';
   ?>
-      <div id="profileFrame" class="frame" >
+      <div id="profileFrame" class="frame fundo_background_dark" >
         <!-- Aqui será carregado o conteúdo via Ajax -->
     </div>
   <div class="container">

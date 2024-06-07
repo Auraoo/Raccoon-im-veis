@@ -19,12 +19,13 @@
 
     <link rel="stylesheet" href="CSS/ADM_page.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
     <link rel="stylesheet" href="CSS/menu_style.css">
 
 
 </head>
 
-<body>
+<body id="dark">
     <?php include 'conteudo/header_adm.php' ?>
     <!-- Formulário de cadastro -->
     <style>
@@ -38,26 +39,26 @@
             margin-top: 80px;
         }
     </style>
-    <div id="profileFrame" class="frame">
+    <div id="profileFrame" class="frame fundo_background_dark">
         <!-- Aqui será carregado o conteúdo via Ajax -->
     </div>
-    <button id="esconder_formularios">Formularios de cadastro</button>
+    <button class="btn btn-primary ml-4" id="esconder_formularios">Formularios de cadastro</button>
 
-    <div class="container mt-4 pt-2 bg-white" id="formularios_cadastro">
+    <div class="container mt-4 pt-2 bg-white fundo_background_dark" id="formularios_cadastro">
 
         <!-- Abas para alternar entre Pessoa Física e Pessoa Jurídica -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs fundo_background_dark" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" style="text-decoration: none;" id="imovelcadastro-tab" data-toggle="tab" href="#cadastro_imovel" role="tab" aria-controls="pessoaFisica" aria-selected="true" data-tipo="1">Cadastro de Imovel</a>
+                <a class="nav-link active   sub-dark" style="text-decoration: none;" id="imovelcadastro-tab" data-toggle="tab" href="#cadastro_imovel" role="tab" aria-controls="pessoaFisica" aria-selected="true" data-tipo="1">Cadastro de Imovel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="text-decoration: none;" id="pessoaJuridica-tab" data-toggle="tab" href="#pessoaJuridica" role="tab" aria-controls="pessoaJuridica" aria-selected="false" data-tipo="2">Cadastro de Corretor</a>
+                <a class="nav-link  sub-dark letras_color_dark" style="text-decoration: none;" id="pessoaJuridica-tab" data-toggle="tab" href="#pessoaJuridica" role="tab" aria-controls="pessoaJuridica" aria-selected="false" data-tipo="2">Cadastro de Corretor</a>
             </li>
         </ul>
-        <div class="tab-content mb-5" id="myTabContent">
+        <div class="tab-content mb-5 fundo_background_dark" id="myTabContent">
             <!-- Formulário de Pessoa Física id="propertyForm" -->
-            <div class="tab-pane fade show active " id="cadastro_imovel" role="tabpanel" aria-labelledby="imovelcadastro-tab">
-                <div class="shadow-box">
+            <div class="tab-pane fade show active fundo_background_dark" id="cadastro_imovel" role="tabpanel" aria-labelledby="imovelcadastro-tab">
+                <div class="shadow-box fundo_background_dark">
                     <h4>Cadastro de Imóveis</h4>
                     <form id="cadastro_imovel" action="ADM_CRUD/inserir_imovel.php" method="POST" enctype="multipart/form-data">
 
@@ -128,7 +129,7 @@
                             <textarea name="descricao" id="descricao" placeholder="Informações imovel"></textarea>
                         </div>
 
-                        <input type="submit" value="Cadastrar Imóvel">
+                        <button type="submit" class="btn btn-primary my-3">Cadastrar Imóvel</button>
                     </form>
                 </div>
             </div>
@@ -160,7 +161,7 @@
                             <label for="id_corretora">ID da Corretora</label>
                             <input type="number" id="id_corretora" name="id_corretora" class="form-control" placeholder="ID da Corretora" required>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-3">Adicionar Corretor</button>
+                        <button type="submit" class="btn btn-primary my-3">Adicionar Corretor</button>
                     </form>
                 </div>
             </div>
@@ -168,8 +169,8 @@
     </div>
     <?php include 'ADM_CRUD/mostrar.php' ?>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
+                            <div class="modal-dialog modal-dialog-centered ">
+                                <div class="modal-content fundo_background_dark">
                                     <form action="ADM_CRUD/alterar.php" method="post">
                                         <div class="modal-header">
                                             <h1 class="modal-title fs-5" id="staticBackdropLabel">Alteração de Dados</h1>
@@ -210,7 +211,7 @@
 
                                             <!-- disponibilidade do imovel -->
                                             <div class="form-group">
-  b                                              <h5>Disponibilidade</h5>
+                                               <h5>Disponibilidade</h5>
 
                                                 <input type="radio" name="disponibilidade" id="disponivel" value="Disponivel">
                                                 <label for="disponivel">Disponivel</label>
@@ -287,36 +288,9 @@
 
 
     <?php include 'conteudo/footer.php' ?>
-    <script>
-        // inicio do link para abrir tela
-        $(document).ready(function() {
-            $('.color_button').on('click', function(event) {
-                $('#profileFrame').toggleClass('show');
-                $(this).toggleClass('active');
-                if ($('#profileFrame').hasClass('show')) {
-                    // Carrega o conteúdo do perfil via Ajax
-                    $('#profileFrame').load('../menu.php');
-                    // Altera o ícone para baixo quando o perfil é ativado
-                    $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_down</i>');
-                } else {
-                    // Reverte o ícone para esquerda quando o perfil é desativado
-                    $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
-                }
-                // Impede que o clique seja propagado para o documento
-                event.stopPropagation();
-            });
-
-            $(document).on('click', function(event) {
-                if (!$(event.target).closest('.color_button').length && !$(event.target).closest('#profileFrame').length) {
-                    $('#profileFrame').removeClass('show');
-                    $('.color_button').removeClass('active');
-                    // Reverte o ícone para esquerda quando o perfil é desativado
-                    $('#elementoHTML').html('<i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i>');
-                }
-            });
-        });
-    </script>
     <script src="JS/ADM_page.js"></script>
+    <script src="JS/botãoseleção.js"></script>
+    <script src="JS/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

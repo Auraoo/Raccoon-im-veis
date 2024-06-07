@@ -44,6 +44,7 @@ if ($result->num_rows == 0) {
     <title>Resultados da Pesquisa</title>
     <link rel="shortcut icon" href="assets/guaxinim-sem-fundo.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/pesquisa_imovel.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <!-- link do menu lateral -->
     <link rel="stylesheet" href="CSS/menu_style.css">
 
@@ -103,7 +104,7 @@ if ($result->num_rows == 0) {
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>";
                                 echo "<td>";
-                                echo "<div class='imovel-card my-2'>";
+                                echo "<div class='imovel-card fundo_background_dark my-2 '>";
                                 echo "<a class='link-desabilitar' href='imovel.php?id=" . $row['id'] . "'>";
                                 echo '<div class="imovel-content">';
                                 echo '<img src="Raccoon-im-veis/' . $row["imagem_principal"] . '" class="imovel-imagem"> ';
@@ -146,7 +147,7 @@ if ($result->num_rows == 0) {
             </div>
         </main>
     </div>
-    <div id="profileFrame" class="frame" >
+    <div id="profileFrame" class="frame fundo_background_dark" >
         <!-- Aqui será carregado o conteúdo via Ajax -->
     </div>
     <?php include "conteudo/footer.php" ?>

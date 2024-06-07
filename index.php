@@ -95,7 +95,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     </div>
   </div>
   
-    <div id="profileFrame" class="frame" >
+    <div id="profileFrame" class="frame menu_dark letras_color_dark" >
         <!-- Aqui será carregado o conteúdo via Ajax -->
     </div>
 

@@ -26,7 +26,12 @@ body {
   color: #fff !important;
   /* Cor do texto escura */
 }
-
+.sub_dark{
+  background-color: #1c2d33 !important;
+}
+.background-dark {
+    background-color: #080e10 !important;
+}
 .light {
   background-color: #fff !important;
   /* Cor de fundo escura */

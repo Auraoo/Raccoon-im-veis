@@ -3,7 +3,7 @@ require 'consulta_info.php'
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<div class="table-widget">
+<div class="table-widget sub-dark fundo_background_dark">
     <table id="Imoveis">
         <caption>
             Imóveis Cadastrados no BD
