@@ -9,7 +9,7 @@
 
 
 
-<header class="dark-header text-center">
+<header class="dark-header text-center header_site">
   <nav class="navbar navbar-expand-lg justify-content-center .dark">
     <div id="logoteste" class="align-content-center "onclick="location.href='index.php';">
       <img src="assets/guaxinim2.png" id="logoguaxinim" alt="Minha Imagem">
@@ -45,7 +45,7 @@
     </div>
   </nav>
 </header>
-<nav class="navbar navbar-expand-lg  bg-dark" style="margin-top:75px;">
+<nav class="navbar navbar-expand-lg  subheader sub-dark" style="margin-top:75px;">
   <div class="container-fluid">
 
     <button class="navbar-toggler bg-light " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,21 +55,21 @@
       <ul class="navbar-nav">
         <!--link pagina de contatos e soobre-->
         <li class="nav-item fundohover2">
-          <a class="nav-link text-white" href="index.php">Home</a>
+          <a class="nav-link letras_color_dark" href="index.php">Home</a>
         </li>
 
         <!--Descer para o menu de imoveis empresa-->
         <li class="nav-item fundohover2">
-          <a class="nav-link text-white" href="index.php#corretores">Colaboradores</a>
+          <a class="nav-link letras_color_dark" href="index.php#corretores">Colaboradores</a>
         </li>
 
         <!--Para sua empresa/ pessoa juridica-->
         <li class="nav-item fundohover2">
-          <a class="nav-link text-white" href="#empresa">Para empresa!</a>
+          <a class="nav-link letras_color_dark" href="#empresa">Para empresa!</a>
         </li>
         <!--Casas pessoa fisica-->
         <li class="nav-item fundohover2">
-          <a class="nav-link text-white" href="#voce">Para você!</a>
+          <a class="nav-link letras_color_dark" href="#voce">Para você!</a>
         </li>
       </ul>
     </div>

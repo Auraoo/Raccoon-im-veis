@@ -16,7 +16,7 @@ session_start();
                 <i class="fas fa-user-tie mr-2 text-white tamanho_linha"></i>
                 <span class="tamanho_linha text-white">Corretores</span>
             </li>
-            <li class="link_navegação" onclick="location.href='index.php#localizacao';">
+            <li class="link_navegação" onclick="location.href='index.php#localização';">
                 <i class="fas fa-map-marker-alt text-white mr-2 tamanho_linha"></i>
                 <span class="tamanho_linha text-white">Localização</span>
             </li>

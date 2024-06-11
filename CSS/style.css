@@ -220,9 +220,14 @@ body {
     }
   }
 }
-
+.header-dark{
+  background-color: #22333B !important;
+}
+.subheader{
+  background-color: #FFFFFF;
+}
 .dark-header {
-  background-color: #22333B;
+  background-color:  #776d60;
   /* Cor de fundo escura */
   position: fixed;
   top: 0;
@@ -301,12 +306,6 @@ button #btncolor {
       clip-path: circle(120% at 76% 49%);
     }
   }
-}
-
-.dark-header .navbar-nav {
-  color: black !important;
-  /* Cor do texto branco */
-
 }
 
 .containeresconder {

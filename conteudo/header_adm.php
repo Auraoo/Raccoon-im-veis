@@ -8,7 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
-<header class="dark-header">
+<header class="dark-header header_site">
     <nav class="navbar navbar-expand-lg .dark">
         <div id="logoteste" class="align-content-center " onclick="location.href='index.php';">
             <img src="assets/guaxinim2.png" id="logoguaxinim" alt="Minha Imagem">

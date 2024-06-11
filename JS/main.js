@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Aplica estilos adicionais para o tema dark
     function applyAdditionalDarkThemeStyles() {
         const botaotemaElements = document.querySelectorAll('.botaotema');
+        const headersiteElements = document.querySelectorAll('.header_site');
         const backgroundDarkElements = document.querySelectorAll('.fundo_background_dark');
         const menuDarkElements = document.querySelectorAll('.menu_dark');
         const subdarkElements = document.querySelectorAll('.sub-dark');
@@ -117,6 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         botaotemaElements.forEach(element => {
             element.style.color = '#ffffff'; // Exemplo de estilo para botaotema
+        });
+
+        headersiteElements.forEach(element => {
+            element.classList.add('header-dark');
         });
 
         backgroundDarkElements.forEach(element => {
@@ -141,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const subdarkElements = document.querySelectorAll('.sub-dark');
         const menuDarkElements = document.querySelectorAll('.menu_dark');
         const letrasDarkElements = document.querySelectorAll('.letras_color_dark');
+        const headersiteElements = document.querySelectorAll('.header_site');
 
         botaotemaElements.forEach(element => {
             element.style.color = ''; // Remove estilo
@@ -159,6 +165,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         menuDarkElements.forEach(element => {
             element.style.backgroundColor = ''; // Remove estilo
+        });
+
+        headersiteElements.forEach(element => {
+            element.classList.remove('header-dark');
         });
     }
 
