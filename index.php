@@ -114,15 +114,16 @@ if(isset($_SESSION['cargo_de_usuario'])) {
   <!--FIM-->
   <hr>
 <!--Conteudo informativo, sem muita alteracao-->
-  <h3>Depoimentos</h3>
+  
   <div class="container-fluid mt-4">
+  <h3>Depoimentos</h3>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 zoom-effect">
                 <img src="/assets/richard.png" class="img-fluid rounded float-left" alt="Imagem 1" width="150" style="margin: 10px;">
                 <h5>Richard Machado</h5>
                 <p>"Recomendo a Raccon Imóveis pelo atendimento excepcional e transparência. Com um portfólio diversificado, atendem a todas as necessidades. Confiança e satisfação são garantidas, tornando-os a escolha ideal para um novo lar ou investimento seguro."</p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 zoom-effect">
                 <img src="/assets/luiza-sonza.jpg" class="img-fluid rounded float-left" alt="Imagem 1" width="150" style="margin: 10px;">
                 <h5>Luiza Sonza</h5>
                 <p>A experiência na Raccon Imóveis foi incrível! Atendimento excepcional, transparência nas negociações e um portfólio diversificado que atendeu todas as minhas necessidades. Recomendo de olhos fechados!</p>
