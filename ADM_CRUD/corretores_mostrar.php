@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
         <div class="container p-2">
         <div class="row info-container fundo_background_dark corretor_background_div">
              
-            <div class="col-md-4" >
+            <div class="col-md-4 p-0" >
                 <img src="Raccon-im-veis/'.$row['foto_corretor'].'" alt="Imagem Exemplo"  style="height: 190px">
             </div>
             <div class="col-md-8 p-2 info fundo_background_dark corretor_background_info">
