@@ -143,7 +143,6 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <!--Inicio para corretores-->
 <?php include 'mensagemlogar/informacao_mensagem.php' ?>    
     <section class="mb-4 zoom-effect" id="corretores">
-    <br>
     <h4>Conheça nossos corretores!</h4>
             <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
                 <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
