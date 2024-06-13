@@ -139,7 +139,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
         <p>Na Raccoon Imóveis, cada cliente é único e cada imóvel é uma nova oportunidade de realizar sonhos. Venha nos conhecer e descubra como podemos transformar sua experiência imobiliária!</p>
       </div>
     </div>
-  </div>
+</div>
   <!--FIM sobre nos-->
 
 
