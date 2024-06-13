@@ -109,7 +109,7 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.639068759222!2d-44.99379412602629!3d-12.136829543581936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75f8aac46ce85d3%3A0xd04192f3e2a1ae21!2sR.%20Padre%20Vieira%20-%20Vila%20Brasil%2C%20Barreiras%20-%20BA%2C%2047800-292!5e0!3m2!1spt-BR!2sbr!4v1717433671572!5m2!1spt-BR!2sbr" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
   </div>
-  <div class="col text-float fundo_background_dark" style="background-color: #F0F0F0;">
+  <div class="col text-float fundo_background_dark p-4" style="background-color: #F0F0F0;">
     <h2>Sobre Nós!</h2>
     <p>Raccoon Imóveis é uma empresa inovadora no setor imobiliário, dedicada a oferecer experiências excepcionais na compra, venda e locação de imóveis. Nossa missão é transformar o mercado imobiliário com soluções personalizadas, buscando sempre a satisfação e confiança dos nossos clientes.</p>
     <p>Visão: Ser a principal referência no setor, destacando-se pela inovação, excelência no atendimento e compromisso com a qualidade.</p>
