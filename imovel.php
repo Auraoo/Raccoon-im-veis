@@ -3,20 +3,20 @@ $mostrarModal = false;
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    $mostrarModal = true;
+  $mostrarModal = true;
 } ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title><?php echo $imovel['titulo']; ?> </title>
   <link rel="shortcut icon" href="assets/guaxinim-sem-fundo.ico" type="image/x-icon">
   <link rel="stylesheet" href="CSS/imovel_p.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
-  <link rel="stylesheet" href="CSS/menu_style.css">
   <link rel="stylesheet" href="CSS/mensagem_logar.css">
-  <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body id="dark">
   <?php
   // adicionando o header dependendo do tipo de usuário
@@ -31,9 +31,9 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
   }
   include 'mensagemlogar/informacao_mensagem.php';
   ?>
-      <div id="profileFrame" class="frame fundo_background_dark" >
-        <!-- Aqui será carregado o conteúdo via Ajax -->
-    </div>
+  <div id="profileFrame" class="frame fundo_background_dark">
+    <!-- Aqui será carregado o conteúdo via Ajax -->
+  </div>
   <div class="container">
     <div class="info_foto">
       <div class="info_site_nome">
@@ -42,17 +42,17 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
         <p class="mb-0">bairro: <?php echo $imovel['bairro']; ?></p>
         <p class="mb-0">Endereço: <?php echo $imovel['endereco_imovel']; ?></p>
         <p class="mb-0">Disponibilidade: <?php echo $imovel['disponibilidade']; ?></p>
-        <div class="preço_imovel mt-4" id="precocolor_temadark" >
+        <div class="preço_imovel mt-4" id="precocolor_temadark">
           <p class="mb-0">R$<?php echo $imovel['preco']; ?>,00</p>
         </div>
         <div class="d-flex mb-4 mt-2">
-          <button type="button"  onclick="checkLogin()" id="btncolor" class="btn btn-lg px-4 mr-2">
+          <button type="button" onclick="checkLogin()" id="btncolor" class="btn btn-lg px-4 mr-2">
             <a href="#" style="text-decoration: none;">
               <span class="spanbtn">Negociar</span>
               <div class="overlay"></div>
             </a>
           </button>
-          <button type="button"  onclick="checkLogin()" id="btncolor" class="btn btn-lg px-4 mr-2">
+          <button type="button" onclick="checkLogin()" id="btncolor" class="btn btn-lg px-4 mr-2">
             <a href="#" style="text-decoration: none;">
               <span class="spanbtn">Financiamento</span>
               <div class="overlay"></div>
@@ -76,7 +76,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 
   </div>
 
-  <div class="imagem_container fundo_background_dark" id="bg_imovel_dark2" >
+  <div class="imagem_container fundo_background_dark" id="bg_imovel_dark2">
     <div class="container pt-2">
       <div class="gallery">
         <?php
@@ -157,7 +157,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
         <p class="p-3 bg_biografia"><?php echo $imovel['biografia_emp']; ?></p>
       </div>
       <div class="corretora_info">
-        
+
         <div class="container p-2">
           <span class="mx-1 ">Corretora</span>
           <h1><?php echo $imovel['nome']; ?></h1>
@@ -179,7 +179,8 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
   <?php require "conteudo/footer.php"; ?>
 </body>
 <script src="JS/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-    <script src="JS/menu_script.js"></script>
-    <script src="JS/botãoseleção.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="JS/menu_script.js"></script>
+<script src="JS/botãoseleção.js"></script>
+
 </html>

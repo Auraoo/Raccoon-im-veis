@@ -7,7 +7,15 @@
             --gray-background: #EDEEF1;
             --gray-mid: #F1F2F6;
         }
+        #formularios_cadastro {
+            display: none;
+            /* Inicialmente escondida */
 
+        }
+
+        #esconder_formularios {
+            margin-top: 80px;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;

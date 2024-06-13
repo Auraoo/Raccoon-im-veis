@@ -1,3 +1,37 @@
+function validarInput(input) {
+    // Remove caracteres que não são permitidos
+    input.value = input.value.replace(/[^\d()\s-]/g, '');
+}
+$(document).ready(function() {
+    // Quando um botão de alternância é clicado
+    $(".nav-link").click(function() {
+        // Obtém o tipo de usuário a partir do atributo data-tipo
+        var tipoUsuario = $(this).data("tipo");
+        // Define o valor do input hidden com o tipo de usuário
+        $("#tipoUsuario").val(tipoUsuario);
+    });
+
+    // Quando o formulário é enviado
+    $("#formPessoaFisica").submit(function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        var formData = $(this).serialize(); // Obtém os dados do formulário
+
+
+    });
+});
+
+// script para esconder o formulario de cadastro(evitar poulição visual)
+document.getElementById('esconder_formularios').addEventListener('click', function() {
+    var div = document.getElementById('formularios_cadastro');
+    if (div.style.display === 'none' || div.style.display === '') {
+        div.style.display = 'block';
+        this.textContent = 'Fechar Formularios de Cadastro';
+    } else {
+        div.style.display = 'none';
+        this.textContent = 'Formularios de cadastro';
+    }
+});
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const itemsOnPage = 4;
     const teamMemberRows = document.getElementById('team-member-rows').getElementsByTagName('tr');

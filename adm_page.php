@@ -1,5 +1,5 @@
 <?php require 'sessao/check_de_sessao.php';
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,10 +16,8 @@
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
+    <!-- demais links principais da pagina  -->
     <link rel="stylesheet" href="CSS/ADM_page.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
     <link rel="stylesheet" href="CSS/menu_style.css">
 
 
@@ -28,19 +26,8 @@
 <body id="dark">
     <?php include 'conteudo/header_adm.php' ?>
     <!-- Formulário de cadastro -->
-    <style>
-        #formularios_cadastro {
-            display: none;
-            /* Inicialmente escondida */
-
-        }
-
-        #esconder_formularios {
-            margin-top: 80px;
-        }
-    </style>
     <div id="profileFrame" class="frame fundo_background_dark">
-        <!-- Aqui será carregado o conteúdo via Ajax -->
+        <!-- aqui irá aparecer o conteúdo atraves do Ajax -->
     </div>
     <button class="btn btn-primary ml-4" id="esconder_formularios">Formularios de cadastro</button>
 
@@ -169,128 +156,75 @@
     </div>
     <?php include 'ADM_CRUD/mostrar.php' ?>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered ">
-                                <div class="modal-content fundo_background_dark">
-                                    <form action="ADM_CRUD/alterar.php" method="post">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Alteração de Dados</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- Campo oculto para enviar o ID do imóvel -->
-                                            <label for="id">Id do Imovel</label><br>
-                                            <input type="number" id="id" name="imovel_id" required><br><br>
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content fundo_background_dark">
+                <form action="ADM_CRUD/alterar.php" method="post">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Alteração de Dados</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Campo oculto para enviar o ID do imóvel -->
+                        <label for="id">Id do Imovel</label><br>
+                        <input type="number" id="id" name="imovel_id" required><br><br>
 
-                                            <!-- Campo de título -->
-                                            <label for="titulo">Título:</label><br>
-                                            <input type="text" id="titulo" name="titulo"><br><br>
+                        <!-- Campo de título -->
+                        <label for="titulo">Título:</label><br>
+                        <input type="text" id="titulo" name="titulo"><br><br>
 
-                                            <!-- campo para o tipo de cidade -->
-                                            <label for="Cidade">Cidade</label><br>
-                                            <input type="text" id="Cidade" name="cidade"><br><br>
+                        <!-- campo para o tipo de cidade -->
+                        <label for="Cidade">Cidade</label><br>
+                        <input type="text" id="Cidade" name="cidade"><br><br>
 
-                                            <!-- campo do tipo de Bairro -->
-                                            <label for="Bairro">Bairro</label><br>
-                                            <input type="text" id="Bairro" name="bairro" placeholder="Bairro:"><br><br>
+                        <!-- campo do tipo de Bairro -->
+                        <label for="Bairro">Bairro</label><br>
+                        <input type="text" id="Bairro" name="bairro" placeholder="Bairro:"><br><br>
 
-                                            <!-- campo do tipo de imovel -->
-                                            <label for="tipo_imovel">Tipo de Imovel</label><br>
-                                            <input type="text" id="tipo_imovel" name="tipo_imovel" placeholder="ex: casa, Apartamento, salão etc.."><br><br>
+                        <!-- campo do tipo de imovel -->
+                        <label for="tipo_imovel">Tipo de Imovel</label><br>
+                        <input type="text" id="tipo_imovel" name="tipo_imovel" placeholder="ex: casa, Apartamento, salão etc.."><br><br>
 
-                                            <!-- Campo de endereço -->
-                                            <label for="endereco">Endereço:</label><br>
-                                            <input type="text" id="endereco" name="endereco"><br><br>
+                        <!-- Campo de endereço -->
+                        <label for="endereco">Endereço:</label><br>
+                        <input type="text" id="endereco" name="endereco"><br><br>
 
-                                            <!-- Campo de preço -->
-                                            <label for="preco">Preço:</label><br>
-                                            <input type="text" id="preco" name="preco"><br><br>
+                        <!-- Campo de preço -->
+                        <label for="preco">Preço:</label><br>
+                        <input type="text" id="preco" name="preco"><br><br>
 
-                                            <!-- Campo de do id do corretor -->
-                                            <label for="corretor">Id corretor</label><br>
-                                            <input type="number" id="corretor" name="corretor"><br><br>
+                        <!-- Campo de do id do corretor -->
+                        <label for="corretor">Id corretor</label><br>
+                        <input type="number" id="corretor" name="corretor"><br><br>
 
-                                            <!-- disponibilidade do imovel -->
-                                            <div class="form-group">
-                                               <h5>Disponibilidade</h5>
+                        <!-- disponibilidade do imovel -->
+                        <div class="form-group">
+                            <h5>Disponibilidade</h5>
 
-                                                <input type="radio" name="disponibilidade" id="disponivel" value="Disponivel">
-                                                <label for="disponivel">Disponivel</label>
-                                                <input type="radio" name="disponibilidade" id="indisponivel" value="Indisponivel">
-                                                <label for="indisponivel">Indisponivel</label>
-                                            </div><br>
+                            <input type="radio" name="disponibilidade" id="disponivel" value="Disponivel">
+                            <label for="disponivel">Disponivel</label>
+                            <input type="radio" name="disponibilidade" id="indisponivel" value="Indisponivel">
+                            <label for="indisponivel">Indisponivel</label>
+                        </div><br>
 
-                                            <!-- Campo de descrição -->
-                                            <label for="descricao">Descrição: </label><br>
-                                            <textarea id="descricao" name="descricao" rows="4" cols="50"></textarea><br>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <input type="submit" value="Alterar">
+                        <!-- Campo de descrição -->
+                        <label for="descricao">Descrição: </label><br>
+                        <textarea id="descricao" name="descricao" rows="4" cols="50"></textarea><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" value="Alterar">
 
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-    <script>
-        function validarInput(input) {
-            // Remove caracteres que não são permitidos
-            input.value = input.value.replace(/[^\d()\s-]/g, '');
-        }
-        $(document).ready(function() {
-            // Quando um botão de alternância é clicado
-            $(".nav-link").click(function() {
-                // Obtém o tipo de usuário a partir do atributo data-tipo
-                var tipoUsuario = $(this).data("tipo");
-                // Define o valor do input hidden com o tipo de usuário
-                $("#tipoUsuario").val(tipoUsuario);
-            });
-
-            // Quando o formulário é enviado
-            $("#formPessoaFisica").submit(function(event) {
-                event.preventDefault(); // Impede o envio padrão do formulário
-                var formData = $(this).serialize(); // Obtém os dados do formulário
-
-
-            });
-        });
-
-        // script para esconder o formulario de cadastro(evitar poulição visual)
-        document.getElementById('esconder_formularios').addEventListener('click', function() {
-            var div = document.getElementById('formularios_cadastro');
-            if (div.style.display === 'none' || div.style.display === '') {
-                div.style.display = 'block';
-                this.textContent = 'Fechar Formularios de Cadastro';
-            } else {
-                div.style.display = 'none';
-                this.textContent = 'Formularios de cadastro';
-            }
-        });
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <?php include 'conteudo/footer.php' ?>
     <script src="JS/ADM_page.js"></script>
     <script src="JS/botãoseleção.js"></script>
     <script src="JS/main.js"></script>
+    <script src="JS/menu_script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

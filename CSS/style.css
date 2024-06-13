@@ -51,6 +51,27 @@ body {
 .text-responsive .corretor_background_container {
   background-color: #666666;
 }
+swiper-container {
+  width: 100%;
+  height: 100%;      
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
 
 #profileIcon {
 
@@ -99,7 +120,11 @@ body {
   font-size: 15px;
   color: #4F4F4F !important;
 }
-
+.link-desabilitar,
+.link-desabilitar:hover {
+    color: inherit;
+    text-decoration: none;
+}
 #logoteste {
   height: 60px;
 }
