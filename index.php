@@ -105,7 +105,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
   <!--section localizacao e sobre nos-->
   <!--CONTEUDO SOBRE LOCALIZACAO E SOBRE NOS-->
   <div class="container-fluid my-3">
-    <div class="row">
+    <div class="row mx-3">
       <div class="col embed-responsive embed-responsive-16by9" id="localização">
         <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.639068759222!2d-44.99379412602629!3d-12.136829543581936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75f8aac46ce85d3%3A0xd04192f3e2a1ae21!2sR.%20Padre%20Vieira%20-%20Vila%20Brasil%2C%20Barreiras%20-%20BA%2C%2047800-292!5e0!3m2!1spt-BR!2sbr!4v1717433671572!5m2!1spt-BR!2sbr" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
@@ -138,23 +138,25 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
         <hr>
         <p>Na Raccoon Imóveis, cada cliente é único e cada imóvel é uma nova oportunidade de realizar sonhos. Venha nos conhecer e descubra como podemos transformar sua experiência imobiliária!</p>
       </div>
-      <!--FIM sobre nos-->
+    </div>
+  </div>
+  <!--FIM sobre nos-->
 
 
-      <!--Inicio para corretores-->
-      <?php include 'mensagemlogar/informacao_mensagem.php' ?>
-      <section class="mb-5 zoom-effect " id="corretores">
-        <br>
-        <h4>Conheça nossos corretores!</h4>
-        <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
-          <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
-        </swiper-container>
-      </section>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-      <?php require 'conteudo/footer.php' ?>
-      <script src="JS/botãoseleção.js"></script>
-      <script src="JS/main.js"></script>
-      <script src="JS/menu_script.js"></script>
+  <!--Inicio para corretores-->
+  <?php include 'mensagemlogar/informacao_mensagem.php' ?>
+  <section class="mb-5 zoom-effect " id="corretores">
+    <br>
+    <h4>Conheça nossos corretores!</h4>
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
+      <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
+    </swiper-container>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <?php require 'conteudo/footer.php' ?>
+  <script src="JS/botãoseleção.js"></script>
+  <script src="JS/main.js"></script>
+  <script src="JS/menu_script.js"></script>
 
 </body>
 
