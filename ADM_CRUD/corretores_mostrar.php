@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
             <div class="col-md-4" >
                 <img src="Raccon-im-veis/'.$row['foto_corretor'].'" alt="Imagem Exemplo"  style="height: 190px">
             </div>
-            <div class="col-md-8 info fundo_background_dark corretor_background_info">
+            <div class="col-md-8 p-2 info fundo_background_dark corretor_background_info">
 
                 <h4 class="corretor_nome letras_color_dark">'.$row['nome_emp'].'</h4>
                 <p class="corretor_email text-responsive letras_color_dark ">Email: '.$row['email_emp'].'</p>
