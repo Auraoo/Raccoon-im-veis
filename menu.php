@@ -1,9 +1,6 @@
 <?php
 session_start();
 ?>
-<link rel="stylesheet" href="CSS/style.css">
-<link rel="stylesheet" href="CSS/botãoseleçãostyle.css">
-<link rel="stylesheet" href="CSS/menu_style.css">
 
 <div class="align-content-center mb-auto ">
     <div class="" id="">
