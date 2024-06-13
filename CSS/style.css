@@ -366,6 +366,13 @@ button #btncolor {
   /* Escolha o cÃ³digo de cor cinza que vocÃª preferir */
   width: 100%;
 }
+.preco {
+  font-size: 24px;
+  color: green !important;
+  margin: 10px 10px 0px 10px;
+  font-weight: bold;
+
+}
 
 ul li a {
   text-decoration: none;
