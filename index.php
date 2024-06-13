@@ -86,62 +86,59 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
   <!--Conteudo informativo, sem muita alteracao-->
 
   <div class="container-fluid mt-4">
-    <h3>Depoimentos</h3>
-    <div class="row">
-      <div class="col-md-6 zoom-effect">
-        <img src="/assets/richard.png" class="img-fluid rounded float-left" alt="Imagem 1" width="150" style="margin: 10px;">
-        <h5>Richard Machado</h5>
-        <p>"Recomendo a Raccon Imóveis pelo atendimento excepcional e transparência. Com um portfólio diversificado, atendem a todas as necessidades. Confiança e satisfação são garantidas, tornando-os a escolha ideal para um novo lar ou investimento seguro."</p>
-      </div>
-      <div class="col-md-6 zoom-effect">
-        <img src="/assets/luiza-sonza.jpg" class="img-fluid rounded float-left" alt="Imagem 1" width="150" style="margin: 10px;">
-        <h5>Luiza Sonza</h5>
-        <p>A experiência na Raccon Imóveis foi incrível! Atendimento excepcional, transparência nas negociações e um portfólio diversificado que atendeu todas as minhas necessidades. Recomendo de olhos fechados!</p>
-      </div>
-    </div>
-  </div>
-  <br>
-  <br>
-  <!--section localizacao e sobre nos-->
-  <!--CONTEUDO SOBRE LOCALIZACAO E SOBRE NOS-->
-
-  <div class="container-fluid">
-    <div class="row mx-4">
-      <div class="col embed-responsive embed-responsive-16by9" id="localização">
-        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.639068759222!2d-44.99379412602629!3d-12.136829543581936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75f8aac46ce85d3%3A0xd04192f3e2a1ae21!2sR.%20Padre%20Vieira%20-%20Vila%20Brasil%2C%20Barreiras%20-%20BA%2C%2047800-292!5e0!3m2!1spt-BR!2sbr!4v1717433671572!5m2!1spt-BR!2sbr" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-      </div>
-      <div class="col text-float fundo_background_dark" style="background-color: #F0F0F0;">
-        <h2>Sobre Nós!</h2>
-        <p>Raccoon Imóveis é uma empresa inovadora no setor imobiliário, dedicada a oferecer experiências excepcionais na compra, venda e locação de imóveis. Nossa missão é transformar o mercado imobiliário com soluções personalizadas, buscando sempre a satisfação e confiança dos nossos clientes.</p>
-        <p>Visão: Ser a principal referência no setor, destacando-se pela inovação, excelência no atendimento e compromisso com a qualidade.</p>
-        <hr>
+  <h3>Depoimentos</h3>
         <div class="row">
-          <div class="col-md-6">
-            <ul>
-              <h3>Valores:</h3>
-              <li>Transparência</li>
-              <li>Excelência</li>
-              <li>Inovação</li>
-              <li>Satisfação do Cliente</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <ul>
-              <h3>Serviços:</h3>
-              <li>Compra e venda de imóveis</li>
-              <li>Locação de imóveis</li>
-              <li>Avaliação e consultoria imobiliária</li>
-              <li>Gestão de propriedades</li>
-            </ul>
-          </div>
+            <div class="col-md-6 zoom-effect">
+                <img src="/assets/richard.png" class="img-fluid rounded float-left" alt="Imagem 1" width="150" style="margin: 10px;">
+                <h5>Richard Machado</h5>
+                <p>"Recomendo a Raccon Imóveis pelo atendimento excepcional e transparência. Com um portfólio diversificado, atendem a todas as necessidades. Confiança e satisfação são garantidas, tornando-os a escolha ideal para um novo lar ou investimento seguro."</p>
+            </div>
+            <div class="col-md-6 zoom-effect">
+                <img src="/assets/luiza-sonza.jpg" class="img-fluid rounded float-left" alt="Imagem 1" width="150" style="margin: 10px;">
+                <h5>Luiza Sonza</h5>
+                <p>A experiência na Raccon Imóveis foi incrível! Atendimento excepcional, transparência nas negociações e um portfólio diversificado que atendeu todas as minhas necessidades. Recomendo de olhos fechados!</p>
+            </div>
         </div>
-        <hr>
-        <p>Na Raccoon Imóveis, cada cliente é único e cada imóvel é uma nova oportunidade de realizar sonhos. Venha nos conhecer e descubra como podemos transformar sua experiência imobiliária!</p>
+    </div>
+<br>
+<br>
+<!--section localizacao e sobre nos-->
+<!--CONTEUDO SOBRE LOCALIZACAO E SOBRE NOS-->
+<div class="container-fluid">
+  <div class="row">
+  <div class="col embed-responsive embed-responsive-16by9" id="localização" >
+    <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.639068759222!2d-44.99379412602629!3d-12.136829543581936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75f8aac46ce85d3%3A0xd04192f3e2a1ae21!2sR.%20Padre%20Vieira%20-%20Vila%20Brasil%2C%20Barreiras%20-%20BA%2C%2047800-292!5e0!3m2!1spt-BR!2sbr!4v1717433671572!5m2!1spt-BR!2sbr" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+  </div>
+  <div class="col text-float fundo_background_dark" style="background-color: #F0F0F0;">
+    <h2>Sobre Nós!</h2>
+    <p>Raccoon Imóveis é uma empresa inovadora no setor imobiliário, dedicada a oferecer experiências excepcionais na compra, venda e locação de imóveis. Nossa missão é transformar o mercado imobiliário com soluções personalizadas, buscando sempre a satisfação e confiança dos nossos clientes.</p>
+    <p>Visão: Ser a principal referência no setor, destacando-se pela inovação, excelência no atendimento e compromisso com a qualidade.</p>
+<hr>
+    <div class="row">
+      <div class="col-md-6">
+        <ul>
+          <h3>Valores:</h3>
+          <li>Transparência</li>
+          <li>Excelência</li>
+          <li>Inovação</li>
+          <li>Satisfação do Cliente</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul>
+          <h3>Serviços:</h3>
+          <li>Compra e venda de imóveis</li>
+          <li>Locação de imóveis</li>
+          <li>Avaliação e consultoria imobiliária</li>
+          <li>Gestão de propriedades</li>
+        </ul>
       </div>
     </div>
-  </div>
-  <!--FIM sobre nos-->
+    <hr>
+    <p>Na Raccoon Imóveis, cada cliente é único e cada imóvel é uma nova oportunidade de realizar sonhos. Venha nos conhecer e descubra como podemos transformar sua experiência imobiliária!</p>
+  </div> 
+<!--FIM sobre nos-->
 
 
   <!--Inicio para corretores-->
