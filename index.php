@@ -113,7 +113,24 @@ if(isset($_SESSION['cargo_de_usuario'])) {
 </div>
   <!--FIM-->
   <hr>
-
+<!--Conteudo informativo, sem muita alteracao-->
+  <h3>Depoimentos</h3>
+  <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/assets/richard.png" class="img-fluid rounded float-left" alt="Imagem 1" width="150" style="margin: 10px;">
+                <h5>Richard Machado</h5>
+                <p>"Recomendo a Raccon Imóveis pelo atendimento excepcional e transparência. Com um portfólio diversificado, atendem a todas as necessidades. Confiança e satisfação são garantidas, tornando-os a escolha ideal para um novo lar ou investimento seguro."</p>
+            </div>
+            <div class="col-md-6">
+                <img src="/assets/luiza-sonza.jpg" class="img-fluid rounded float-left" alt="Imagem 1" width="150" style="margin: 10px;">
+                <h5>Luiza Sonza</h5>
+                <p>A experiência na Raccon Imóveis foi incrível! Atendimento excepcional, transparência nas negociações e um portfólio diversificado que atendeu todas as minhas necessidades. Recomendo de olhos fechados!</p>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
 <!--section localizacao e sobre nos-->
 <!--CONTEUDO SOBRE LOCALIZACAO E SOBRE NOS-->
 <div class="container-fluid">
@@ -153,29 +170,8 @@ if(isset($_SESSION['cargo_de_usuario'])) {
 <!--FIM sobre nos-->
 
 
-    <main>
-          <hr>
-          <div class="container col-xxl-8 px-4 py-5">
-              <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-                <div class="col-10 col-sm-8 col-lg-6 zoom-effect">
-                  <img src="./assets/imagem contrato.webp" class="d-block mx-lg-auto img-fluid" alt="Imagen contrato" width="700" height="500" loading="lazy">
-                </div>
-                <div class="col-lg-6">
-                  <h1 class="display-5 fw-bold  lh-1 mb-3">Não perca tempo!</h1>
-                  <p class="lead">"Descubra o conforto e a conveniência do aluguel de casas com a Raccoon Imóveis. Oferecemos uma variedade de opções de residências, desde casas acolhedoras até espaçosas, para atender às suas necessidades. Conte com nossa equipe para encontrar o lar perfeito para você, tornando sua experiência de aluguel simples e satisfatória. Entre em contato agora para começar a sua busca!"
-                  </p>
-                  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" onclick="checkLogin()"class="btn btn-primary btn-lg px-4 me-md-2 mr-2">E-mail</button>
-                    <button type="button" onclick="checkLogin()" class="btn btn-outline-secondary btn-lg px-4">Contato!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </main>
-        <?php include 'mensagemlogar/informacao_mensagem.php' ?>
-
-
-        
+    <!--Inicio para corretores-->
+<?php include 'mensagemlogar/informacao_mensagem.php' ?>    
     <section class="mb-4 zoom-effect" id="corretores">
     <h4>Conheça nossos corretores!</h4>
             <swiper-container  class="mySwiper mb-2" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
@@ -183,7 +179,6 @@ if(isset($_SESSION['cargo_de_usuario'])) {
             </swiper-container>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-
     <?php require 'conteudo/footer.php' ?>
     <script>
         // fin do link para abrir tela
@@ -205,5 +200,6 @@ if(isset($_SESSION['cargo_de_usuario'])) {
     <script src="JS/botãoseleção.js"></script>
     <script src="JS/main.js"></script>
     <script src="JS/menu_script.js"></script>
+    
 </body>
 </html>
