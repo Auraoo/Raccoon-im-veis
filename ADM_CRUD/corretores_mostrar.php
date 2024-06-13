@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
          
         echo ' 
         <swiper-slide>
-        <div class="container p-2">
+        <div class="container p-2 mx-2">
         <div class="row info-container fundo_background_dark corretor_background_div">
              
             <div class="col-md-4 p-0" style="z-index: 30!important;" >

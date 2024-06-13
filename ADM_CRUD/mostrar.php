@@ -59,7 +59,7 @@ require 'consulta_info.php'
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="4">
+                <td colspan="6">
                     <ul class="pagination">
                         <!-- Paginação gerada onde irá jogar os outros dados caso passe de 4 linhas -->
                     </ul>

@@ -17,26 +17,26 @@
         </div>
         <div class="search-container">
             <form id="searchForm" class="d-flex" action="pesquisa_imoveis.php" method="GET">
-                <input id="input_pesquisa" class="form-control mx-2" type="text" name="query" placeholder="Pesquisar produtos..."autocomplete="off">
+                <input id="input_pesquisa" class="form-control mx-2" type="text" name="query" placeholder="Pesquisar produtos..." autocomplete="off">
             </form>
         </div>
         <div class="ml-auto d-flex">
             <div class="inline_telapqna">
                 <nav class="  navbar fotomudartamanho navbar-expand-lg navbar-light p-1 justify-content-end align-items-center">
-                <div class="mx-2">
-        <label class="toggle m-0" id="diminuirTP">
-          <input type="checkbox" id="themeCheckbox" />
-          <div class="off-knob align-content-center text-center justify-content-center" id="darkMode"><i class="material-icons text-white">brightness_3</i></div>
-          <div class="on-knob align-content-center text-black" id="lightMode"><i class="material-icons">wb_sunny</i></div>
+                    <div class="mx-2">
+                        <label class="toggle m-0" id="diminuirTP">
+                            <input type="checkbox" id="themeCheckbox" />
+                            <div class="off-knob align-content-center text-center justify-content-center" id="darkMode"><i class="material-icons text-white">brightness_3</i></div>
+                            <div class="on-knob align-content-center text-black" id="lightMode"><i class="material-icons">wb_sunny</i></div>
 
-          <svg viewBox="0 0 44 22" xmlns="http://www.w3.org/2000/svg">
-            <rect class="outline" fill="none" rx="11" stroke-linejoin="round" stroke-linecap="round" stroke-width="1" />
-            <rect class="outline outline--blur" fill="none" rx="11" stroke-linejoin="round" stroke-linecap="round" stroke-width="15" />
-          </svg>
-        </label>
-      </div>
+                            <svg viewBox="0 0 44 22" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="outline" fill="none" rx="11" stroke-linejoin="round" stroke-linecap="round" stroke-width="1" />
+                                <rect class="outline outline--blur" fill="none" rx="11" stroke-linejoin="round" stroke-linecap="round" stroke-width="15" />
+                            </svg>
+                        </label>
+                    </div>
                     <div id="profileIcon" class="d-flex text-white align-items-center color_button rounded-pill ">
-                    <h5 class="my-auto" ><?php echo $_SESSION['usernome']; ?></h5>    
+                        <h5 class="my-auto"><?php echo $_SESSION['usernome']; ?></h5>
                         <span id="elementoHTML"><i class="material-icons text-white" style="font-size: 30px;">keyboard_arrow_left</i></span>
                     </div>
                 </nav>

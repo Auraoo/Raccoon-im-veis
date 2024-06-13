@@ -249,7 +249,7 @@ swiper-slide img {
   background-color: #22333B !important;
 }
 .subheader{
-  background-color: #FFFFFF;
+  background-color: #d6d6d6;
 }
 .dark-header {
   background-color:  #776d60;
@@ -272,7 +272,9 @@ swiper-slide img {
   border-radius: 10px;
   background-color: #994e0d;
 }
-
+textarea {
+  resize: none; 
+}
 .inline_telapqna {
   display: inline-flex;
 }

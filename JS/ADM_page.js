@@ -33,7 +33,7 @@ document.getElementById('esconder_formularios').addEventListener('click', functi
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const itemsOnPage = 4;
+    const itemsOnPage = 6;
     const teamMemberRows = document.getElementById('team-member-rows').getElementsByTagName('tr');
     const totalItems = teamMemberRows.length;
     const numberOfPages = Math.ceil(totalItems / itemsOnPage);

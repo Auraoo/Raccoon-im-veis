@@ -5,12 +5,12 @@ session_start();
 // Obter a consulta de pesquisa
 $query = isset($_GET['query']) ? $_GET['query'] : '';
 $garagem = isset($_GET['garagem']) ? $_GET['garagem'] : '';
-$suite = isset($_GET['suite']) ? $_GET['suite'] : ''; // Novo filtro para exemplo
+$bairro = isset($_GET['bairro']) ? $_GET['bairro'] : ''; // Novo filtro para exemplo
 
 // Prevenir SQL Injection
 $query = $conexao->real_escape_string($query);
 $garagem = $conexao->real_escape_string($garagem);
-$suite = $conexao->real_escape_string($suite);
+$bairro = $conexao->real_escape_string($bairro);
 
 // Consultar o banco de dados
 $sql = "SELECT imoveis.*, especificacao.garagem FROM imoveis 
@@ -23,8 +23,8 @@ if ($garagem === 'sim') {
     $sql .= " AND especificacao.garagem = 'Nao'";
 }
 
-if ($suite === 'yes') {
-    $sql .= " AND especificacao.suite = 'Yes'";
+if (!empty($bairro)) {
+    $sql .= " AND imoveis.bairro = '$bairro'";
 }
 
 $result = $conexao->query($sql);
@@ -47,14 +47,16 @@ if ($result->num_rows == 0) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Resultados da Pesquisa</title>
+    <title>Raccoon Imóveis</title>
     <link rel="shortcut icon" href="assets/guaxinim-sem-fundo.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/pesquisa_imovel.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/menu_style.css">
 </head>
+
 <body id="dark">
     <?php
     if (isset($_SESSION['cargo_de_usuario'])) {
@@ -71,19 +73,24 @@ if ($result->num_rows == 0) {
         <aside class="sidebar-left">
             <form action="User_crud/select_pesquisa.php" method="GET" id="pesquisa_formulario">
                 <input type="hidden" name="query" value="<?php echo htmlspecialchars($query); ?>">
-
                 <div class="filter-section my-2">
-                    <label class="filter-label mb-0">Quartos com Suíte:</label>
-                    <input type="checkbox" id="suiteYes" name="suite" value="yes"> Sim
+                    <label class="filter-label mb-0"  for="bairro">Bairro:</labe>
+                    <select class="form-control" name="bairro" id="bairro">
+                        <option value=""  disabled selected>Selecione um Bairro</option>
+                        <option value="Barreiras">Barreiras</option>
+                        <option value="Morada Nobre">Morada Nobre</option>
+                        <option value="Vila Regina">Vila Regina</option>
+                        <option value="Jardim Ouro Branco">Jardim Ouro Branco</option>
+                        <option value="Bandeirantes">Bandeirantes</option>
+                        <option value="Morada da Lua">Morada da Lua</option>
+                    </select>
                 </div>
-                
                 <div class="filter-section my-2">
                     <label class="filter-label mb-0">Garagem</label>
                     <input type="radio" id="garagemsim" name="garagem" value="sim">
-                    <label for="garagemsim">Sim</label> 
+                    <label for="garagemsim">Sim</label>
                     <input type="radio" id="garagemnao" name="garagem" value="nao">
-                    <label for="garagemnao">Não</label> 
-
+                    <label for="garagemnao">Não</label>
                 </div><br>
 
                 <button class="button_filtro" type="submit">Pesquisar</button>
@@ -145,4 +152,5 @@ if ($result->num_rows == 0) {
     <script src="JS/botãoseleção.js"></script>
     <script src="JS/pesquisa_tela.js"></script>
 </body>
+
 </html>

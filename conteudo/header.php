@@ -55,21 +55,21 @@
       <ul class="navbar-nav">
         <!--link pagina de contatos e soobre-->
         <li class="nav-item fundohover2">
-          <a class="nav-link letras_color_dark" href="index.php">Home</a>
+          <a class="nav-link letras_color_dark" href="index.php"><b>Home</b></a>
         </li>
 
         <!--Descer para o menu de imoveis empresa-->
         <li class="nav-item fundohover2">
-          <a class="nav-link letras_color_dark" href="index.php#corretores">Colaboradores</a>
+          <a class="nav-link letras_color_dark" href="index.php#corretores"><b>Corretores</b></a>
         </li>
 
         <!--Para sua empresa/ pessoa juridica-->
         <li class="nav-item fundohover2">
-          <a class="nav-link letras_color_dark" href="#empresa">Para empresa!</a>
+          <a class="nav-link letras_color_dark" href="index.php#localização"><b>Localização</b></a>
         </li>
         <!--Casas pessoa fisica-->
         <li class="nav-item fundohover2">
-          <a class="nav-link letras_color_dark" href="#voce">Para você!</a>
+          <a class="nav-link letras_color_dark" href="pesquisa_imoveis.php"><b>Imoveis</b></a>
         </li>
       </ul>
     </div>

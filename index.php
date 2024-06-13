@@ -145,10 +145,10 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 
   <!--Inicio para corretores-->
   <?php include 'mensagemlogar/informacao_mensagem.php' ?>
-  <section class="mb-5 zoom-effect " id="corretores">
+  <section class="mb-5 zoom-effect mx-3" id="corretores">
     <br>
     <h4>Conheça nossos corretores!</h4>
-    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="2" space-between="30" free-mode="true">
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="3" space-between="30" free-mode="true">
       <?php include 'ADM_CRUD/corretores_mostrar.php' ?>
     </swiper-container>
   </section>
